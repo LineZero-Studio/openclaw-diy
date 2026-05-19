@@ -7,7 +7,7 @@
 
 ## Active Risks
 
-No active implementation risks beyond the remaining fresh disposable VPS validation gate.
+No active implementation risks.
 
 ## Retired Risks
 | Risk | Retired On | Evidence |

@@ -9,9 +9,9 @@ The v1 target is intentionally narrow: a user can create a Linode/Akamai Ubuntu 
 See [STATUS.md](./STATUS.md) for the current project state, next ticket, blockers, and open gates.
 
 Current summary:
-- Overall status: foundation implementation, live validation, model validation, reboot validation, owner copy approval, optional Telegram Bot API validation, `v0.1.0` tagging, `v0.1.1` patch tagging, `v0.1.2` patch tagging, raw URL verification, tag CI, test-root tag validation, post-install command hardening, and SSH-once validation ergonomics are complete.
-- Current milestone: live validation and release gates.
-- Next recommended work: run the `v0.1.2` tag-pinned install path on a fresh disposable Ubuntu 24.04 VPS.
+- Overall status: foundation implementation, live validation, model validation, reboot validation, owner copy approval, optional Telegram Bot API validation, `v0.1.0` tagging, `v0.1.1` patch tagging, `v0.1.2` patch tagging, raw URL verification, tag CI, test-root tag validation, post-install command hardening, SSH-once validation ergonomics, and fresh disposable VPS tagged install validation are complete.
+- Current milestone: `v0.1.2` release validation complete.
+- Next recommended work: no planned release tickets remain.
 
 ## Key Decisions
 See [DECISIONS.md](./DECISIONS.md) for locked product and implementation decisions.
@@ -31,10 +31,10 @@ Highlights:
 See [GATES.md](./GATES.md). Work that does not need user input lives under `00-foundation-no-input`.
 
 Known remaining gates:
-- Fresh disposable Ubuntu 24.04 VPS tagged install.
+- None.
 
 ## Release Gate
-See [RELEASE_CHECKLIST.md](./RELEASE_CHECKLIST.md) and [RELEASE_PROCESS.md](./RELEASE_PROCESS.md). `v0.1.2` should not be considered stable until tag URL verification and tagged install validation pass.
+See [RELEASE_CHECKLIST.md](./RELEASE_CHECKLIST.md) and [RELEASE_PROCESS.md](./RELEASE_PROCESS.md). `v0.1.2` has passed tag URL verification and user-reported tagged install validation.
 
 ## Ticket Layout
 Tickets live at:

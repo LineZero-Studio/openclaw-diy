@@ -19,7 +19,7 @@
 | Owner copy review | complete | user | `OWNER-002`, release | User approved the final public wording on 2026-05-19. |
 | Telegram BotFather token | complete | user | optional Telegram live validation | Live Bot API probe passed for `linus_linezero_bot`; first DM pairing remains a user-initiated operational step. |
 | Approval to publish `v0.1.0` | complete | user | `RELEASE-002` | User approved publication on 2026-05-19; tag was created and raw URLs verified. |
-| Fresh disposable VPS for tagged install | blocked | user | `RELEASE-002` final closure | `v0.1.2` tag, raw URLs, tag CI, and test-root validation are complete; strict final closure still needs a fresh Ubuntu 24.04 host to run the current tag-pinned install command end to end. |
+| Fresh disposable VPS for tagged install | complete | user | `RELEASE-002` final closure | User reported `v0.1.2` tagged install, dashboard pairing, gateway/model checks, reboot, and post-reboot gateway/model checks passed on fresh VPS `root@172.105.7.156` on 2026-05-19. |
 | Patch release decision for post-install command handoff | complete | user | release follow-up | User approved publishing a patch tag for the hardened post-install command handoff on 2026-05-19; `v0.1.1` was created and verified. |
 | Patch release decision for SSH-once installer handoff | complete | user | release follow-up | User approved publishing a patch tag for the one-SSH-session installer handoff on 2026-05-19; `v0.1.2` was created and verified. |
 

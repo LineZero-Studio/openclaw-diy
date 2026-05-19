@@ -1,6 +1,6 @@
 ---
 id: RELEASE-002
-status: in_progress
+status: complete
 priority: high
 owner: unassigned
 epic: 05-ci-release-gate
@@ -11,7 +11,7 @@ depends_on:
   - VPS-003
   - RELEASE-003
 blocks: []
-human_input_required: true
+human_input_required: false
 last_updated: 2026-05-19
 ---
 
@@ -30,10 +30,10 @@ Completed:
 - User approved publishing `v0.1.2` patch tag on 2026-05-19.
 
 Remaining:
-- Fresh disposable VPS tagged install validation.
+- None.
 
 ## Status Notes
-`v0.1.0` publication is approved, the tag is pushed, raw tag URLs are verified, and the tag-pinned installer passed test-root validation. User approved a `v0.1.1` patch tag to ship the hardened post-install commands that run as `openclaw` and source `/home/openclaw/.openclaw/.env`. `v0.1.1` is pushed, tag CI passed, raw tag URLs parse, and the raw tagged installer passed test-root validation. User approved a `v0.1.2` patch tag to ship the one-SSH-session validation flow in installer output. `v0.1.2` is pushed, tag CI passed, raw tag URLs parse, and the raw tagged installer passed test-root validation. Final closure still requires tagged live install validation on a fresh disposable Ubuntu 24.04 host unless the release owner explicitly accepts the current validation set.
+`v0.1.0` publication is approved, the tag is pushed, raw tag URLs are verified, and the tag-pinned installer passed test-root validation. User approved a `v0.1.1` patch tag to ship the hardened post-install commands that run as `openclaw` and source `/home/openclaw/.openclaw/.env`. `v0.1.1` is pushed, tag CI passed, raw tag URLs parse, and the raw tagged installer passed test-root validation. User approved a `v0.1.2` patch tag to ship the one-SSH-session validation flow in installer output. `v0.1.2` is pushed, tag CI passed, raw tag URLs parse, and the raw tagged installer passed test-root validation. On 2026-05-19, user reported the fresh disposable Ubuntu 24.04 `v0.1.2` tagged install passed dashboard pairing, gateway status, model health check, reboot, and post-reboot gateway/model checks on `root@172.105.7.156`.
 
 ## Dependencies
 - `RELEASE-001`
@@ -69,7 +69,7 @@ https://raw.githubusercontent.com/LineZero-Studio/openclaw-diy/v0.1.2/install.sh
 ## Acceptance Criteria
 - README/site show tag-pinned command.
 - Release checklist exists.
-- `v0.1.2` is not considered stable until the release checklist passes.
+- `v0.1.2` is considered validated after the release checklist passed.
 
 ## Verification
 - Confirm raw GitHub URL works after tag.
@@ -87,6 +87,7 @@ https://raw.githubusercontent.com/LineZero-Studio/openclaw-diy/v0.1.2/install.sh
 - `v0.1.2` raw tagged installer passed built-in test-root validation with `--skip-model`.
 - `v0.1.2` raw tagged installer contains the one-SSH-session validation handoff.
 - Current guide and `main` installer output avoid repeated `ssh root@...` wrappers for post-install validation commands.
+- User-reported fresh disposable VPS `v0.1.2` tagged install passed gateway status, model health check, reboot, and post-reboot checks on `root@172.105.7.156`.
 
 ## Out Of Scope
 - Automating cloud VPS creation.
