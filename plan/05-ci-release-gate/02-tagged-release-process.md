@@ -29,11 +29,10 @@ Completed:
 - User approved publishing `v0.1.1` patch tag on 2026-05-19.
 
 Remaining:
-- `v0.1.1` tag creation and raw URL verification.
 - Fresh disposable VPS tagged install validation.
 
 ## Status Notes
-`v0.1.0` publication is approved, the tag is pushed, raw tag URLs are verified, and the tag-pinned installer passed test-root validation. The written process has been drafted in `plan/RELEASE_PROCESS.md`. User approved a `v0.1.1` patch tag to ship the hardened post-install commands that run as `openclaw` and source `/home/openclaw/.openclaw/.env`. Final closure still requires `v0.1.1` tag verification and tagged live install validation on a fresh disposable Ubuntu 24.04 host unless the release owner explicitly accepts the current validation set.
+`v0.1.0` publication is approved, the tag is pushed, raw tag URLs are verified, and the tag-pinned installer passed test-root validation. User approved a `v0.1.1` patch tag to ship the hardened post-install commands that run as `openclaw` and source `/home/openclaw/.openclaw/.env`. `v0.1.1` is pushed, tag CI passed, raw tag URLs parse, and the raw tagged installer passed test-root validation. Final closure still requires tagged live install validation on a fresh disposable Ubuntu 24.04 host unless the release owner explicitly accepts the current validation set.
 
 ## Dependencies
 - `RELEASE-001`
@@ -78,6 +77,10 @@ https://raw.githubusercontent.com/LineZero-Studio/openclaw-diy/v0.1.1/install.sh
 - `v0.1.0` raw `install.sh` and `scripts/add-telegram.sh` URLs parsed with `bash -n`.
 - `v0.1.0` tag-pinned installer passed built-in test-root validation with `--skip-model`.
 - Current `main` static checks verify env-loaded post-install command wrappers in README/site.
+- `v0.1.1` raw `install.sh` and `scripts/add-telegram.sh` URLs parse with `bash -n`.
+- `v0.1.1` tag CI passed.
+- `v0.1.1` raw tagged installer passed built-in test-root validation with `--skip-model`.
+- `v0.1.1` raw tagged installer contains env-loaded device approval and gateway status handoff commands.
 
 ## Out Of Scope
 - Automating cloud VPS creation.

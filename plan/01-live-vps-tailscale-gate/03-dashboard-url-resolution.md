@@ -26,7 +26,7 @@ Completed:
 - Tailscale login on live VPS so MagicDNS/Serve output is real
 
 ## Status Notes
-Completed on 2026-05-19. The live dashboard URL is `https://openclaw.tail16b31d.ts.net/`, detected from Tailscale MagicDNS after login. Tailscale Serve status maps that URL to `http://127.0.0.1:18789`, and a HEAD request returned `HTTP/2 200`. The installer now prints the detected dashboard URL, explains it must be opened from a device in the same tailnet, prints the gateway health-check command, prints a macOS clipboard command for copying `OPENCLAW_GATEWAY_TOKEN` into the dashboard's `Gateway Token` field if the browser asks for auth, and explains the `openclaw devices approve <request-id>` step if the Control UI asks for one-time device pairing. Current `main` handoff commands run as `openclaw` and source `/home/openclaw/.openclaw/.env`; the already-published `v0.1.0` installer output still has the older shorter command. The token value itself is not printed by the installer because installer output is logged.
+Completed on 2026-05-19. The live dashboard URL is `https://openclaw.tail16b31d.ts.net/`, detected from Tailscale MagicDNS after login. Tailscale Serve status maps that URL to `http://127.0.0.1:18789`, and a HEAD request returned `HTTP/2 200`. The installer now prints the detected dashboard URL, explains it must be opened from a device in the same tailnet, prints the gateway health-check command, prints a macOS clipboard command for copying `OPENCLAW_GATEWAY_TOKEN` into the dashboard's `Gateway Token` field if the browser asks for auth, and explains the `openclaw devices approve <request-id>` step if the Control UI asks for one-time device pairing. The current public `v0.1.1` installer handoff commands run as `openclaw` and source `/home/openclaw/.openclaw/.env`. The token value itself is not printed by the installer because installer output is logged.
 
 ## Dependencies
 - `VPS-001`
@@ -68,7 +68,7 @@ and explain what to look for.
 - `curl -fsSIL --max-time 20 https://openclaw.tail16b31d.ts.net/` returned `HTTP/2 200`.
 - Site, README, and installer include `OPENCLAW_GATEWAY_TOKEN` clipboard guidance without printing the token value directly.
 - Live browser pairing was approved with `openclaw devices approve <request-id>`; a follow-up scope-upgrade request was also approved, and `openclaw devices list` showed paired devices.
-- Current site, README, and `main` installer handoff use the env-loaded `openclaw` user wrapper for device approval and gateway status commands.
+- Current site, README, and `v0.1.1` installer handoff use the env-loaded `openclaw` user wrapper for device approval and gateway status commands.
 
 ## Out Of Scope
 - Public domain setup.

@@ -7,10 +7,7 @@
 
 ## Active Risks
 
-| Risk | Status | Impact | Likelihood | Mitigation | Linked Tickets |
-|---|---|---:|---:|---|---|
-| `curl | bash` trust concern may reduce confidence | open | medium | medium | Show "view script first" link next to install command; tag-pin release. | `FOUNDATION-006`, `RELEASE-002` |
-| Published `v0.1.0` installer handoff text may lead users to run post-install OpenClaw commands without the env-loaded `openclaw` user wrapper | mitigating | medium | medium | `v0.1.1` patch publication is in progress; public commands now target the patch tag with the hardened handoff. | `FOUNDATION-006`, `VPS-003`, `TELEGRAM-002`, `RELEASE-002` |
+No active implementation risks beyond the remaining fresh disposable VPS validation gate.
 
 ## Retired Risks
 | Risk | Retired On | Evidence |
@@ -25,3 +22,5 @@
 | MiniMax recommended path may fail live validation | 2026-05-19 | Live MiniMax onboarding succeeded with `minimax-global-api`, defaulted to `MiniMax-M2.7`, and returned `pong` for the tiny health check. |
 | Linode/Akamai credit/pricing copy may go stale | 2026-05-19 | Owner approved final public wording; current site and README avoid hard dollar amounts, credit-duration promises, and fixed pricing claims. |
 | Telegram config patch may need exact OpenClaw schema adjustment | 2026-05-19 | Live add-on validation stored the token as an env SecretRef, config validation passed, `channels status --probe` returned `probe.ok=true`, and steady-state status showed Telegram configured, running, connected, and available. |
+| `curl | bash` trust concern may reduce confidence | 2026-05-19 | Public install commands are tag-pinned, the site includes a "view script first" link, and the current public tag is `v0.1.1`. |
+| Published `v0.1.0` installer handoff text may lead users to run post-install OpenClaw commands without the env-loaded `openclaw` user wrapper | 2026-05-19 | Public commands now target `v0.1.1`; raw tag verification confirmed the tagged installer includes the env-loaded `openclaw` user handoff for device approval and gateway status. |

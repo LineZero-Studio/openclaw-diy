@@ -9,9 +9,9 @@ The v1 target is intentionally narrow: a user can create a Linode/Akamai Ubuntu 
 See [STATUS.md](./STATUS.md) for the current project state, next ticket, blockers, and open gates.
 
 Current summary:
-- Overall status: foundation implementation, live validation, model validation, reboot validation, owner copy approval, optional Telegram Bot API validation, `v0.1.0` tagging, raw URL verification, test-root tag validation, current-guide post-install command hardening, and `v0.1.1` patch approval are complete.
+- Overall status: foundation implementation, live validation, model validation, reboot validation, owner copy approval, optional Telegram Bot API validation, `v0.1.0` tagging, `v0.1.1` patch tagging, raw URL verification, tag CI, test-root tag validation, and post-install command hardening are complete.
 - Current milestone: live validation and release gates.
-- Next recommended work: create and verify the `v0.1.1` patch tag, then run the tag-pinned install path on a fresh disposable Ubuntu 24.04 VPS.
+- Next recommended work: run the `v0.1.1` tag-pinned install path on a fresh disposable Ubuntu 24.04 VPS.
 
 ## Key Decisions
 See [DECISIONS.md](./DECISIONS.md) for locked product and implementation decisions.
