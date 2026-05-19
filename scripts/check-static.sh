@@ -9,6 +9,7 @@ skip_model_command="curl -fsSL https://raw.githubusercontent.com/LineZero-Studio
 telegram_command="curl -fsSL https://raw.githubusercontent.com/LineZero-Studio/openclaw-diy/v0.1.1/scripts/add-telegram.sh | bash"
 env_command_prefix="set -a; source /home/openclaw/.openclaw/.env; set +a;"
 device_approve_command="sudo -u openclaw -H bash -lc '${env_command_prefix} openclaw devices approve <request-id>'"
+gateway_token_command="sudo -u openclaw -H bash -lc \"sed -n 's/^OPENCLAW_GATEWAY_TOKEN=//p' /home/openclaw/.openclaw/.env\""
 telegram_status_command="sudo -u openclaw -H bash -lc '${env_command_prefix} openclaw channels status --channel telegram --probe --json'"
 
 required_files=(
@@ -65,6 +66,7 @@ for path in "index.html" "README.md"; do
   assert_contains "$path" "OPENCLAW_GATEWAY_TOKEN"
   assert_contains "$path" "Gateway Token"
   assert_contains "$path" "Device pairing required"
+  assert_contains "$path" "$gateway_token_command"
   assert_contains "$path" "gateway token missing"
   assert_contains "$path" "MiniMax"
   assert_contains "$path" "Gemini"
@@ -72,10 +74,13 @@ for path in "index.html" "README.md"; do
 done
 
 assert_contains "README.md" "$device_approve_command"
+assert_contains "README.md" "ssh root@<your-vps-ip>"
+assert_contains "index.html" "ssh root@&lt;your-vps-ip&gt;"
 assert_contains "index.html" "openclaw devices approve"
 assert_contains "index.html" "command-snippet"
 assert_contains "index.html" "copy-icon-button"
-assert_contains "index.html" "gatewayTokenCopyCommand"
+assert_contains "index.html" "vpsSshCommand"
+assert_contains "index.html" "gatewayTokenCommand"
 assert_contains "index.html" "deviceApproveCommand"
 assert_contains "site-config.js" "releaseTag = \"v0.1.1\""
 assert_contains "install.sh" "RELEASE_TAG=\"v0.1.1\""

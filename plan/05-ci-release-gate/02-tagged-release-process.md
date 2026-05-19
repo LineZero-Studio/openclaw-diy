@@ -30,9 +30,10 @@ Completed:
 
 Remaining:
 - Fresh disposable VPS tagged install validation.
+- Release-owner decision on whether the one-SSH-session installer handoff should ship in a follow-up patch tag.
 
 ## Status Notes
-`v0.1.0` publication is approved, the tag is pushed, raw tag URLs are verified, and the tag-pinned installer passed test-root validation. User approved a `v0.1.1` patch tag to ship the hardened post-install commands that run as `openclaw` and source `/home/openclaw/.openclaw/.env`. `v0.1.1` is pushed, tag CI passed, raw tag URLs parse, and the raw tagged installer passed test-root validation. Final closure still requires tagged live install validation on a fresh disposable Ubuntu 24.04 host unless the release owner explicitly accepts the current validation set.
+`v0.1.0` publication is approved, the tag is pushed, raw tag URLs are verified, and the tag-pinned installer passed test-root validation. User approved a `v0.1.1` patch tag to ship the hardened post-install commands that run as `openclaw` and source `/home/openclaw/.openclaw/.env`. `v0.1.1` is pushed, tag CI passed, raw tag URLs parse, and the raw tagged installer passed test-root validation. Current guide and `main` installer output now use a one-SSH-session validation flow, but this is not yet in a published tag. Final closure still requires tagged live install validation on a fresh disposable Ubuntu 24.04 host unless the release owner explicitly accepts the current validation set.
 
 ## Dependencies
 - `RELEASE-001`
@@ -81,6 +82,7 @@ https://raw.githubusercontent.com/LineZero-Studio/openclaw-diy/v0.1.1/install.sh
 - `v0.1.1` tag CI passed.
 - `v0.1.1` raw tagged installer passed built-in test-root validation with `--skip-model`.
 - `v0.1.1` raw tagged installer contains env-loaded device approval and gateway status handoff commands.
+- Current guide and `main` installer output avoid repeated `ssh root@...` wrappers for post-install validation commands.
 
 ## Out Of Scope
 - Automating cloud VPS creation.

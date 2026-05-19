@@ -9,9 +9,9 @@ The v1 target is intentionally narrow: a user can create a Linode/Akamai Ubuntu 
 See [STATUS.md](./STATUS.md) for the current project state, next ticket, blockers, and open gates.
 
 Current summary:
-- Overall status: foundation implementation, live validation, model validation, reboot validation, owner copy approval, optional Telegram Bot API validation, `v0.1.0` tagging, `v0.1.1` patch tagging, raw URL verification, tag CI, test-root tag validation, and post-install command hardening are complete.
+- Overall status: foundation implementation, live validation, model validation, reboot validation, owner copy approval, optional Telegram Bot API validation, `v0.1.0` tagging, `v0.1.1` patch tagging, raw URL verification, tag CI, test-root tag validation, post-install command hardening, and current-guide SSH-once validation ergonomics are complete.
 - Current milestone: live validation and release gates.
-- Next recommended work: run the `v0.1.1` tag-pinned install path on a fresh disposable Ubuntu 24.04 VPS.
+- Next recommended work: continue the `v0.1.1` tag-pinned fresh VPS validation and decide whether to publish a follow-up tag for installer-output SSH-once ergonomics.
 
 ## Key Decisions
 See [DECISIONS.md](./DECISIONS.md) for locked product and implementation decisions.
@@ -32,6 +32,7 @@ See [GATES.md](./GATES.md). Work that does not need user input lives under `00-f
 
 Known remaining gates:
 - Fresh disposable Ubuntu 24.04 VPS tagged install.
+- Patch release decision for the SSH-once installer handoff.
 
 ## Release Gate
 See [RELEASE_CHECKLIST.md](./RELEASE_CHECKLIST.md) and [RELEASE_PROCESS.md](./RELEASE_PROCESS.md). `v0.1.1` should not be considered stable until tag URL verification and tagged install validation pass.

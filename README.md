@@ -95,12 +95,18 @@ The v1 access path keeps the OpenClaw gateway bound to loopback on port `18789`.
 
 Do not open public OpenClaw ports. Do not use Tailscale Funnel for v1.
 
-After install, run OpenClaw operational commands as the dedicated `openclaw` user and load the installer-managed `.env`. Running `openclaw ...` directly as `root` uses `/root/.openclaw` and can fail with `gateway token missing`.
+After install, SSH into the VPS once, then run OpenClaw operational commands from that VPS shell as the dedicated `openclaw` user while loading the installer-managed `.env`. Running `openclaw ...` directly as `root` uses `/root/.openclaw` and can fail with `gateway token missing`.
 
-If the dashboard opens but asks for auth, copy the gateway token to your local clipboard from your local machine:
+Start one VPS shell:
 
 ```bash
-ssh root@<your-vps-ip> "sudo -u openclaw -H bash -lc \"sed -n 's/^OPENCLAW_GATEWAY_TOKEN=//p' /home/openclaw/.openclaw/.env\"" | pbcopy
+ssh root@<your-vps-ip>
+```
+
+If the dashboard opens but asks for auth, print the gateway token from that VPS shell and paste it into the dashboard:
+
+```bash
+sudo -u openclaw -H bash -lc "sed -n 's/^OPENCLAW_GATEWAY_TOKEN=//p' /home/openclaw/.openclaw/.env"
 ```
 
 Paste it into the dashboard's `Gateway Token` field and connect. Do not share the token; it is a dashboard credential.
@@ -108,7 +114,7 @@ Paste it into the dashboard's `Gateway Token` field and connect. Do not share th
 If the dashboard then says `Device pairing required`, approve only the request you initiated. Copy the request ID shown by the dashboard and run:
 
 ```bash
-ssh root@<your-vps-ip> "sudo -u openclaw -H bash -lc 'set -a; source /home/openclaw/.openclaw/.env; set +a; openclaw devices approve <request-id>'"
+sudo -u openclaw -H bash -lc 'set -a; source /home/openclaw/.openclaw/.env; set +a; openclaw devices approve <request-id>'
 ```
 
 Then click Connect again.

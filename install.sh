@@ -502,11 +502,12 @@ print_dashboard_summary() {
   if [[ -n "$dns_name" ]]; then
     info "Dashboard URL: https://${dns_name}/"
     info "Open it from a device logged into the same Tailscale account."
-    info "If the dashboard asks for auth, copy the gateway token to your local clipboard and paste it into the Gateway Token field."
-    info "macOS clipboard command:"
-    info "ssh root@${ssh_host_hint} \"sudo -u ${OPENCLAW_USER} -H bash -lc \\\"sed -n 's/^OPENCLAW_GATEWAY_TOKEN=//p' ${OPENCLAW_ENV_PATH}\\\"\" | pbcopy"
+    info "For follow-up commands, SSH into the VPS once:"
+    info "ssh root@${ssh_host_hint}"
+    info "If the dashboard asks for auth, run this on the VPS and paste the output into the Gateway Token field:"
+    info "sudo -u ${OPENCLAW_USER} -H bash -lc \"sed -n 's/^OPENCLAW_GATEWAY_TOKEN=//p' ${OPENCLAW_ENV_PATH}\""
     info "If the dashboard then says Device pairing required, approve only the request ID shown in your browser:"
-    info "ssh root@${ssh_host_hint} \"sudo -u ${OPENCLAW_USER} -H bash -lc 'set -a; source ${OPENCLAW_ENV_PATH}; set +a; openclaw devices approve <request-id>'\""
+    info "sudo -u ${OPENCLAW_USER} -H bash -lc 'set -a; source ${OPENCLAW_ENV_PATH}; set +a; openclaw devices approve <request-id>'"
     info "Click Connect again after approval."
     info "Do not paste the token into chat, screenshots, or support requests."
   else

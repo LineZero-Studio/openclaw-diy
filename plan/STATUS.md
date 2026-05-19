@@ -1,7 +1,7 @@
 # Project Status
 
 ## Overall Status
-Foundation implementation, no-input documentation work, owner copy approval, live no-model VPS install, Tailscale Serve, dashboard URL validation, dashboard Gateway Token and device pairing guidance, no-model reboot persistence, Gemini health-check validation, MiniMax health-check validation, provider-key reboot validation, optional Telegram Bot API validation, `v0.1.0` publication, and `v0.1.1` patch publication are complete. The current public tag is `v0.1.1`; raw tag URLs parse, tag CI passed, the raw tagged installer passed test-root validation, and the tagged installer output includes env-loaded `openclaw` user commands for post-install handoff. `FOUNDATION-001` through `FOUNDATION-006`, `OWNER-001`, `OWNER-002`, `TELEGRAM-001`, `TELEGRAM-002`, `RELEASE-001`, `RELEASE-003`, `RELEASE-004`, `VPS-001`, `VPS-002`, `VPS-003`, `MODEL-001`, `MODEL-002`, and `MODEL-003` are complete. Strict `RELEASE-002` closure still needs a fresh disposable Ubuntu 24.04 host for a tag-pinned install run.
+Foundation implementation, no-input documentation work, owner copy approval, live no-model VPS install, Tailscale Serve, dashboard URL validation, dashboard Gateway Token and device pairing guidance, no-model reboot persistence, Gemini health-check validation, MiniMax health-check validation, provider-key reboot validation, optional Telegram Bot API validation, `v0.1.0` publication, and `v0.1.1` patch publication are complete. The current public tag is `v0.1.1`; raw tag URLs parse, tag CI passed, the raw tagged installer passed test-root validation, and the tagged installer output includes env-loaded `openclaw` user commands for post-install handoff. The current `main` guide and installer handoff have been further improved to use a single SSH session followed by direct VPS commands; this is not yet in a published patch tag. `FOUNDATION-001` through `FOUNDATION-006`, `OWNER-001`, `OWNER-002`, `TELEGRAM-001`, `TELEGRAM-002`, `RELEASE-001`, `RELEASE-003`, `RELEASE-004`, `VPS-001`, `VPS-002`, `VPS-003`, `MODEL-001`, `MODEL-002`, and `MODEL-003` are complete. Strict `RELEASE-002` closure still needs a fresh disposable Ubuntu 24.04 host for a tag-pinned install run.
 
 ## Current Milestone
 Live validation and gated release.
@@ -10,7 +10,7 @@ Live validation and gated release.
 Human input is now required before the next ticket can complete.
 
 Next recommended work:
-Run the `v0.1.1` tag-pinned install command on a fresh disposable Ubuntu 24.04 VPS for strict final closure.
+Continue the `v0.1.1` fresh VPS validation, using the one-SSH-session command flow from the current guide. Decide whether the SSH-once installer handoff should ship as a follow-up patch tag.
 
 ## Completed
 - [FOUNDATION-001 - Create Repo Structure And Shared Config](./00-foundation-no-input/01-repo-structure-and-config.md)
@@ -48,12 +48,12 @@ No remaining todo tickets are unblocked without human input.
 See [RISKS.md](./RISKS.md).
 
 Highest-risk items:
-- No active implementation risks beyond the remaining fresh disposable VPS validation gate.
+- The `v0.1.1` installer output still uses repeated SSH command wrappers; the current guide and `main` installer output now use a one-SSH-session flow, but a follow-up patch tag is needed if installer output must match.
 
 ## Human Inputs Still Needed
 See [GATES.md](./GATES.md).
 
-Foundation, no-input documentation, owner copy approval, live no-model VPS smoke test, Tailscale Serve, dashboard URL, Gateway Token, and device pairing guidance, reboot persistence, Gemini health-check validation, MiniMax health-check validation, provider-key reboot validation, optional Telegram Bot API validation, `v0.1.0` publication, `v0.1.1` patch publication, raw URL verification, tag CI, tag-pinned test-root validation, and post-install command hardening are complete. Remaining strict release work is a fresh disposable VPS tagged install.
+Foundation, no-input documentation, owner copy approval, live no-model VPS smoke test, Tailscale Serve, dashboard URL, Gateway Token, and device pairing guidance, reboot persistence, Gemini health-check validation, MiniMax health-check validation, provider-key reboot validation, optional Telegram Bot API validation, `v0.1.0` publication, `v0.1.1` patch publication, raw URL verification, tag CI, tag-pinned test-root validation, post-install command hardening, and current-guide SSH-once ergonomics are complete. Remaining strict release work is a fresh disposable VPS tagged install and a decision on whether to publish a follow-up tag for installer-output ergonomics.
 
 ## Last Updated
 2026-05-19

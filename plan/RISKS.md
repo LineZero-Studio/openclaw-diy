@@ -7,7 +7,9 @@
 
 ## Active Risks
 
-No active implementation risks beyond the remaining fresh disposable VPS validation gate.
+| Risk | Status | Impact | Likelihood | Mitigation | Linked Tickets |
+|---|---|---:|---:|---|---|
+| `v0.1.1` installer output still encourages repeated SSH wrappers during validation | mitigating | low | medium | Current guide and `main` installer output now use a one-SSH-session flow; publish a follow-up patch tag if installer output must match. | `FOUNDATION-006`, `VPS-003`, `RELEASE-002` |
 
 ## Retired Risks
 | Risk | Retired On | Evidence |

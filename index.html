@@ -170,11 +170,23 @@
           <div class="stacked-copy">
             <p>The v1 access path keeps the OpenClaw gateway bound to loopback on port <code>18789</code>. The installer installs Tailscale, and Tailscale Serve exposes the dashboard over HTTPS inside your tailnet after browser login.</p>
             <p>Do not open public OpenClaw ports. Do not use Tailscale Funnel for v1. Live validation will confirm the actual dashboard URL after Tailscale login.</p>
-            <p>After install, run OpenClaw operational commands as the dedicated <code>openclaw</code> user and load the installer-managed <code>.env</code>. Running <code>openclaw</code> directly as <code>root</code> can use the wrong config and fail with <code>gateway token missing</code>.</p>
-            <p>If the dashboard asks for auth, copy the gateway token from your local machine, paste it into the <code>Gateway Token</code> field, and do not share it.</p>
+            <p>After install, SSH into the VPS once, then run OpenClaw operational commands from that VPS shell as the dedicated <code>openclaw</code> user while loading the installer-managed <code>.env</code>. Running <code>openclaw</code> directly as <code>root</code> can use the wrong config and fail with <code>gateway token missing</code>.</p>
             <div class="command-snippet">
-              <pre><code data-config="gatewayTokenCopyCommand">ssh root@&lt;your-vps-ip&gt; "sudo -u openclaw -H bash -lc \"sed -n 's/^OPENCLAW_GATEWAY_TOKEN=//p' /home/openclaw/.openclaw/.env\"" | pbcopy</code></pre>
-              <button class="copy-icon-button" type="button" data-copy-command data-copy-key="gatewayTokenCopyCommand" aria-label="Copy Gateway Token command" title="Copy Gateway Token command">
+              <pre><code data-config="vpsSshCommand">ssh root@&lt;your-vps-ip&gt;</code></pre>
+              <button class="copy-icon-button" type="button" data-copy-command data-copy-key="vpsSshCommand" aria-label="Copy SSH command" title="Copy SSH command">
+                <svg class="copy-icon" aria-hidden="true" viewBox="0 0 24 24">
+                  <rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <svg class="check-icon" aria-hidden="true" viewBox="0 0 24 24">
+                  <path d="m20 6-11 11-5-5"></path>
+                </svg>
+              </button>
+            </div>
+            <p>If the dashboard asks for auth, print the gateway token from that VPS shell, paste it into the <code>Gateway Token</code> field, and do not share it.</p>
+            <div class="command-snippet">
+              <pre><code data-config="gatewayTokenCommand">sudo -u openclaw -H bash -lc "sed -n 's/^OPENCLAW_GATEWAY_TOKEN=//p' /home/openclaw/.openclaw/.env"</code></pre>
+              <button class="copy-icon-button" type="button" data-copy-command data-copy-key="gatewayTokenCommand" aria-label="Copy Gateway Token command" title="Copy Gateway Token command">
                 <svg class="copy-icon" aria-hidden="true" viewBox="0 0 24 24">
                   <rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect>
                   <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
@@ -186,7 +198,7 @@
             </div>
             <p>If it then shows <code>Device pairing required</code>, approve only the request ID shown by your browser, then connect again.</p>
             <div class="command-snippet">
-              <pre><code data-config="deviceApproveCommand">ssh root@&lt;your-vps-ip&gt; "sudo -u openclaw -H bash -lc 'set -a; source /home/openclaw/.openclaw/.env; set +a; openclaw devices approve &lt;request-id&gt;'"</code></pre>
+              <pre><code data-config="deviceApproveCommand">sudo -u openclaw -H bash -lc 'set -a; source /home/openclaw/.openclaw/.env; set +a; openclaw devices approve &lt;request-id&gt;'</code></pre>
               <button class="copy-icon-button" type="button" data-copy-command data-copy-key="deviceApproveCommand" aria-label="Copy device approval command" title="Copy device approval command">
                 <svg class="copy-icon" aria-hidden="true" viewBox="0 0 24 24">
                   <rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect>

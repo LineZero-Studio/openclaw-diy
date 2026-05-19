@@ -21,11 +21,13 @@
 | Approval to publish `v0.1.0` | complete | user | `RELEASE-002` | User approved publication on 2026-05-19; tag was created and raw URLs verified. |
 | Fresh disposable VPS for tagged install | blocked | user | `RELEASE-002` final closure | `v0.1.1` tag, raw URLs, tag CI, and test-root validation are complete; strict final closure still needs a fresh Ubuntu 24.04 host to run the current tag-pinned install command end to end. |
 | Patch release decision for post-install command handoff | complete | user | release follow-up | User approved publishing a patch tag for the hardened post-install command handoff on 2026-05-19; `v0.1.1` was created and verified. |
+| Patch release decision for SSH-once installer handoff | blocked | user | release follow-up | Current guide and `main` installer output now use a one-SSH-session validation flow; decide whether to publish a follow-up patch tag so installer output matches. |
 
 ## Inputs Already Decided
 - GitHub repo: `LineZero-Studio/openclaw-diy`
 - First release tag: `v0.1.0`
 - Current public release tag: `v0.1.1`
+- Next patch tag target, if approved: `v0.1.2`
 - Help URL: `https://linezerostudio.com`
 - Marker path and log path confirmed
 - No-model smoke mode remains supported; live Gemini and MiniMax test keys were provided and validated.
