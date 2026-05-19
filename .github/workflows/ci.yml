@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  checks:
+    name: Shell and static checks
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Shell syntax
+        run: |
+          bash -n install.sh
+          bash -n scripts/add-telegram.sh
+          bash -n scripts/check-static.sh
+
+      - name: JavaScript syntax
+        run: |
+          node --check script.js
+          node --check site-config.js
+
+      - name: Install ShellCheck
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y shellcheck
+
+      - name: ShellCheck
+        run: |
+          shellcheck install.sh scripts/add-telegram.sh scripts/check-static.sh
+
+      - name: Static site consistency
+        run: |
+          bash scripts/check-static.sh

@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>OpenClaw VPS Guide</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="site-config.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="site-title" href="#top" data-config="projectName">OpenClaw VPS Guide</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#install">Install</a>
+        <a href="#vps">VPS</a>
+        <a href="#models">Models</a>
+        <a href="#access">Access</a>
+        <a href="#telegram">Telegram</a>
+        <a href="#troubleshooting">Troubleshoot</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="setup-hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Ubuntu 24.04 VPS setup</p>
+          <h1 id="page-title" data-config="projectName">OpenClaw VPS Guide</h1>
+          <p class="lede">Set up a private sandbox in 15 minutes</p>
+          <p class="outcome">First successful outcome: OpenClaw is installed under a dedicated Linux user, the gateway stays on loopback, and the dashboard opens privately through Tailscale Serve.</p>
+        </div>
+
+        <div class="command-panel" id="install" aria-label="Install command">
+          <div class="panel-heading">
+            <p class="step-label">Tagged install command</p>
+            <a data-config-href="rawInstallUrl" href="https://raw.githubusercontent.com/LineZero-Studio/openclaw-diy/v0.1.0/install.sh">View script first</a>
+          </div>
+          <div class="command-snippet">
+            <pre><code data-config="installCommand">curl -fsSL https://raw.githubusercontent.com/LineZero-Studio/openclaw-diy/v0.1.0/install.sh | bash</code></pre>
+            <button class="copy-icon-button" type="button" data-copy-command data-copy-key="installCommand" aria-label="Copy install command" title="Copy command">
+              <svg class="copy-icon" aria-hidden="true" viewBox="0 0 24 24">
+                <rect x="9" y="9" width="11" height="11" rx="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              <svg class="check-icon" aria-hidden="true" viewBox="0 0 24 24">
+                <path d="m20 6-11 11-5-5"></path>
+              </svg>
+            </button>
+          </div>
+          <p class="note">The public command is pinned to <span data-config="releaseTag">v0.1.0</span>. Do not run install docs from <code>main</code> for a beginner setup.</p>
+        </div>
+
+        <div class="flow-map" aria-label="Setup flow">
+          <div>
+            <span class="flow-number">1</span>
+            <strong>Fresh VPS</strong>
+            <span>Ubuntu 24.04</span>
+          </div>
+          <div>
+            <span class="flow-number">2</span>
+            <strong>Installer</strong>
+            <span>OpenClaw user + daemon</span>
+          </div>
+          <div>
+            <span class="flow-number">3</span>
+            <strong>Private dashboard</strong>
+            <span>Tailscale Serve</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-band" id="requirements" aria-labelledby="requirements-title">
+        <div class="section-heading">
+          <p class="eyebrow">Before you start</p>
+          <h2 id="requirements-title">Requirements</h2>
+        </div>
+        <div class="check-grid">
+          <article>
+            <h3>Fresh Ubuntu VPS</h3>
+            <p>Use Ubuntu 24.04 on a new VPS with no unrelated data. The installer intentionally stops on other operating systems.</p>
+          </article>
+          <article>
+            <h3>Tailscale account</h3>
+            <p>You will complete browser login during live validation. The guide does not ask beginners for a Tailscale auth key.</p>
+          </article>
+          <article>
+            <h3>Model choice</h3>
+            <p>MiniMax is the recommended API-key path. Gemini API is the free-tier fallback. Skip-model mode is for smoke testing only.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-band alt" id="vps" aria-labelledby="vps-title">
+        <div class="section-heading">
+          <p class="eyebrow">VPS checklist</p>
+          <h2 id="vps-title">Linode/Akamai Default Path</h2>
+        </div>
+        <div class="two-column">
+          <ol class="step-list">
+            <li>Create a new Linode using Ubuntu 24.04 LTS.</li>
+            <li>Choose a 2 GB Shared CPU size unless you know you need more.</li>
+            <li>Pick a region close to you or your expected users.</li>
+            <li>Add SSH access, boot the VPS, and connect as the admin user.</li>
+            <li>Run the tagged installer command from this page.</li>
+          </ol>
+          <aside class="side-note">
+            <h3>DigitalOcean fallback</h3>
+            <p>Use a fresh Ubuntu 24.04 Droplet with similar memory. Keep the rest of the flow the same unless provider-specific networking instructions differ.</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="content-band" id="costs" aria-labelledby="costs-title">
+        <div class="section-heading">
+          <p class="eyebrow">Cost checkpoints</p>
+          <h2 id="costs-title">Review Charges Before Creating Resources</h2>
+        </div>
+        <div class="check-grid">
+          <article>
+            <h3>VPS runtime</h3>
+            <p>Cloud providers usually start charging while the VPS exists, even when OpenClaw is idle. Check the current plan page before you create it.</p>
+          </article>
+          <article>
+            <h3>Backups and snapshots</h3>
+            <p>Provider backups, snapshots, reserved IPs, and extra storage can add charges. Leave paid extras off unless you intentionally choose them.</p>
+          </article>
+          <article>
+            <h3>Model API use</h3>
+            <p>MiniMax or Gemini usage depends on the provider account, limits, and terms. Do not assume a free tier will stay unchanged.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-band alt" id="models" aria-labelledby="models-title">
+        <div class="section-heading">
+          <p class="eyebrow">Model setup</p>
+          <h2 id="models-title">MiniMax, Gemini, Or Smoke Mode</h2>
+        </div>
+        <div class="two-column">
+          <div class="stacked-copy">
+            <h3>Normal install</h3>
+            <p>The installer prompts for a provider. Press Enter for MiniMax, or choose Gemini API as the fallback. Keys are stored in <code>/home/openclaw/.openclaw/.env</code> with mode <code>0600</code>.</p>
+            <p>Gemini API free tiers have rate limits, terms may change, and you should review Google AI Studio data and privacy terms before relying on it.</p>
+          </div>
+          <div class="command-card">
+            <p class="step-label">No-model smoke mode</p>
+            <div class="command-snippet">
+              <pre><code data-config="skipModelCommand">curl -fsSL https://raw.githubusercontent.com/LineZero-Studio/openclaw-diy/v0.1.0/install.sh | bash -s -- --skip-model</code></pre>
+              <button class="copy-icon-button" type="button" data-copy-command data-copy-key="skipModelCommand" aria-label="Copy skip-model command" title="Copy command">
+                <svg class="copy-icon" aria-hidden="true" viewBox="0 0 24 24">
+                  <rect x="9" y="9" width="11" height="11" rx="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <svg class="check-icon" aria-hidden="true" viewBox="0 0 24 24">
+                  <path d="m20 6-11 11-5-5"></path>
+                </svg>
+              </button>
+            </div>
+            <p class="note">This mode runs onboarding with <code>--auth-choice skip</code> and prints <code>Model check: skipped - no API key provided</code>.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-band" id="access" aria-labelledby="access-title">
+        <div class="section-heading">
+          <p class="eyebrow">Private dashboard</p>
+          <h2 id="access-title">Tailscale Serve Only</h2>
+        </div>
+        <div class="two-column">
+          <div class="stacked-copy">
+            <p>The v1 access path keeps the OpenClaw gateway bound to loopback on port <code>18789</code>. The installer installs Tailscale, and Tailscale Serve exposes the dashboard over HTTPS inside your tailnet after browser login.</p>
+            <p>Do not open public OpenClaw ports. Do not use Tailscale Funnel for v1. Live validation will confirm the actual dashboard URL after Tailscale login.</p>
+            <p>If the dashboard asks for auth, run <code>ssh root@&lt;your-vps-ip&gt; "sudo -u openclaw -H bash -lc &quot;sed -n 's/^OPENCLAW_GATEWAY_TOKEN=//p' /home/openclaw/.openclaw/.env&quot;" | pbcopy</code> from your local machine, then paste into the <code>Gateway Token</code> field. Do not share it.</p>
+            <p>If it then shows <code>Device pairing required</code>, approve only the request you initiated with <code>ssh root@&lt;your-vps-ip&gt; "sudo -u openclaw -H bash -lc 'openclaw devices approve &lt;request-id&gt;'"</code>, then connect again.</p>
+          </div>
+          <ol class="step-list compact">
+            <li>Installer installs Tailscale and configures local gateway defaults.</li>
+            <li>User completes <code>tailscale up</code> browser login during live validation.</li>
+            <li>Tailscale Serve publishes the private dashboard URL.</li>
+            <li>Gateway token copy command is shown only as a command, not printed into installer logs.</li>
+            <li>Browser device pairing is approved with the request ID shown by the dashboard.</li>
+            <li>Gateway status and dashboard access are checked before release.</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="content-band alt" id="telegram" aria-labelledby="telegram-title">
+        <div class="section-heading">
+          <p class="eyebrow">Optional add-on</p>
+          <h2 id="telegram-title">Telegram After Core Setup</h2>
+        </div>
+        <div class="two-column">
+          <div class="stacked-copy">
+            <p>Run Telegram setup only after the installer completes, the private dashboard opens through Tailscale Serve, and gateway health checks are clean. Telegram is not part of first-run success.</p>
+            <p>Create a bot token in Telegram with <code>@BotFather</code> and <code>/newbot</code>. The add-on stores the token in <code>/home/openclaw/.openclaw/.env</code> and configures the default Telegram account with DM pairing enabled and groups disabled for v1.</p>
+            <p>OpenClaw's Telegram docs describe BotFather setup, default DM pairing, and the <code>TELEGRAM_BOT_TOKEN</code> env fallback: <a href="https://docs.openclaw.ai/channels/telegram">docs.openclaw.ai/channels/telegram</a>.</p>
+          </div>
+          <div class="command-card">
+            <p class="step-label">Run the add-on</p>
+            <div class="command-snippet">
+              <pre><code data-config="telegramCommand">curl -fsSL https://raw.githubusercontent.com/LineZero-Studio/openclaw-diy/v0.1.0/scripts/add-telegram.sh | bash</code></pre>
+              <button class="copy-icon-button" type="button" data-copy-command data-copy-key="telegramCommand" aria-label="Copy Telegram add-on command" title="Copy command">
+                <svg class="copy-icon" aria-hidden="true" viewBox="0 0 24 24">
+                  <rect x="9" y="9" width="11" height="11" rx="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <svg class="check-icon" aria-hidden="true" viewBox="0 0 24 24">
+                  <path d="m20 6-11 11-5-5"></path>
+                </svg>
+              </button>
+            </div>
+            <p class="note">Do not paste the token into support requests, screenshots, or shared logs.</p>
+          </div>
+        </div>
+        <div class="section-heading subsection-heading">
+          <h3>Telegram Checks</h3>
+        </div>
+        <div class="check-grid">
+          <article>
+            <h3>Status probe</h3>
+            <p>After setup, run <code data-config="telegramStatusCommand">sudo -u openclaw -H bash -lc 'openclaw channels status --channel telegram --probe --json'</code>.</p>
+          </article>
+          <article>
+            <h3>First DM</h3>
+            <p>If the bot does not reply, start a direct message to the bot and approve the first pairing request from OpenClaw before relying on it.</p>
+          </article>
+          <article>
+            <h3>Common failures</h3>
+            <p>Rerun after a successful core install, confirm the BotFather token is current, keep groups out of v1, and share only sanitized status output.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-band" id="troubleshooting" aria-labelledby="troubleshooting-title">
+        <div class="section-heading">
+          <p class="eyebrow">Recovery</p>
+          <h2 id="troubleshooting-title">Troubleshooting And Rebuild Rules</h2>
+        </div>
+        <div class="check-grid">
+          <article>
+            <h3>Logs</h3>
+            <p>Installer logs are written under <code>/var/log/openclaw-vps-guide/</code>. Failure output prints the active log path.</p>
+          </article>
+          <article>
+            <h3>Resume behavior</h3>
+            <p>Marker-owned partial installs can be rerun. Unknown existing <code>/home/openclaw/.openclaw</code> state stops the installer instead of overwriting it.</p>
+          </article>
+          <article>
+            <h3>Secret safety</h3>
+            <p>Do not share <code>.env</code>, API keys, bot tokens, gateway tokens, or screenshots that show secrets. Share sanitized command output only.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-band alt" id="support" aria-labelledby="support-title">
+        <div class="section-heading">
+          <p class="eyebrow">Support boundary</p>
+          <h2 id="support-title">Local Diagnostics Only</h2>
+        </div>
+        <div class="status-panel">
+          <p>This guide does not upload diagnostics and does not provide managed hosting. Use local logs and sanitized OpenClaw command output when asking for best-effort setup help.</p>
+          <p>Never send <code>/home/openclaw/.openclaw/.env</code>, API keys, bot tokens, gateway tokens, or screenshots with visible secrets.</p>
+          <p>Help link: <a data-config-href="helpUrl" href="https://linezerostudio.com">https://linezerostudio.com</a></p>
+        </div>
+      </section>
+
+      <section class="content-band" id="release" aria-labelledby="release-title">
+        <div class="section-heading">
+          <p class="eyebrow">Release gate</p>
+          <h2 id="release-title">Pre-Release Validation Boundary</h2>
+        </div>
+        <div class="status-panel">
+          <p>The implementation is not stable until a disposable Ubuntu 24.04 VPS passes live install, reboot persistence, Tailscale Serve, dashboard URL, and at least one real model health check.</p>
+          <p>Final brand and positioning copy remains marked for owner review.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span> &copy;<script>document.write(new Date().getFullYear())</script> LineZero Studio</span>
+      <a data-config-href="helpUrl" href="https://linezerostudio.com">Run into issues?</a>
+    </footer>
+  </body>
+</html>
