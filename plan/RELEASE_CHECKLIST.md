@@ -54,6 +54,8 @@ Do not publish or present `v0.1.0` as stable until this checklist passes.
 - [x] Human gates updated in `plan/GATES.md`.
 - [x] Risks updated in `plan/RISKS.md`.
 - [x] User approval to publish `v0.1.0`.
-- [ ] Tag `v0.1.0` created.
-- [ ] Raw GitHub install URL works from the tag.
+- [x] Tag `v0.1.0` created.
+- [x] Raw GitHub install URL works from the tag.
+- [x] Raw GitHub Telegram add-on URL works from the tag.
+- [x] Tag-pinned installer passes built-in test-root validation.
 - [ ] Tagged install command passes on a fresh disposable Ubuntu 24.04 VPS.

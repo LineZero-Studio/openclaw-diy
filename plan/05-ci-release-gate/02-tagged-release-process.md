@@ -28,7 +28,7 @@ Completed:
 - User approved publishing `v0.1.0` on 2026-05-19.
 
 ## Status Notes
-Publication is approved and release execution is in progress. The written process has been drafted in `plan/RELEASE_PROCESS.md`; final closure still requires tag creation, tag URL verification, and tagged live install validation.
+Publication is approved, the tag is pushed, raw tag URLs are verified, and the tag-pinned installer passed test-root validation. The written process has been drafted in `plan/RELEASE_PROCESS.md`; final closure still requires tagged live install validation on a fresh disposable Ubuntu 24.04 host unless the release owner explicitly accepts the current validation set.
 
 ## Dependencies
 - `RELEASE-001`
@@ -70,6 +70,8 @@ https://raw.githubusercontent.com/LineZero-Studio/openclaw-diy/v0.1.0/install.sh
 - Confirm raw GitHub URL works after tag.
 - Run install from tag on disposable VPS.
 - Draft process checked for consistency with `plan/RELEASE_CHECKLIST.md`.
+- `v0.1.0` raw `install.sh` and `scripts/add-telegram.sh` URLs parse with `bash -n`.
+- Tag-pinned installer passed built-in test-root validation with `--skip-model`.
 
 ## Out Of Scope
 - Automating cloud VPS creation.

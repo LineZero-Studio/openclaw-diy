@@ -19,6 +19,7 @@
 | Owner copy review | complete | user | `OWNER-002`, release | User approved the final public wording on 2026-05-19. |
 | Telegram BotFather token | complete | user | optional Telegram live validation | Live Bot API probe passed for `linus_linezero_bot`; first DM pairing remains a user-initiated operational step. |
 | Approval to publish `v0.1.0` | complete | user | `RELEASE-002` | User approved publication on 2026-05-19; tag creation and verification are in progress. |
+| Fresh disposable VPS for tagged install | blocked | user | `RELEASE-002` final closure | `v0.1.0` tag and raw URLs are verified; strict final closure still needs a fresh Ubuntu 24.04 host to run the tag-pinned install command end to end. |
 
 ## Inputs Already Decided
 - GitHub repo: `LineZero-Studio/openclaw-diy`
