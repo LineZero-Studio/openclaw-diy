@@ -20,7 +20,6 @@ fi
 
 OPENCLAW_STATE_DIR="${OPENCLAW_HOME}/${OPENCLAW_STATE_DIRNAME}"
 OPENCLAW_ENV_PATH="${OPENCLAW_STATE_DIR}/${ENV_FILENAME}"
-PRIVILEGE_MODE="root"
 
 info() {
   printf '[INFO] %s\n' "$*"
@@ -50,12 +49,10 @@ shell_quote() {
 
 configure_privilege() {
   if [[ -n "$TEST_ROOT" ]]; then
-    PRIVILEGE_MODE="test-root"
     return
   fi
 
   if [[ "${EUID}" -eq 0 ]]; then
-    PRIVILEGE_MODE="root"
     return
   fi
 
@@ -64,7 +61,6 @@ configure_privilege() {
   fi
 
   sudo -v || fail "sudo authentication failed. Re-run with an administrator account."
-  PRIVILEGE_MODE="sudo"
 }
 
 privileged_file_exists() {
