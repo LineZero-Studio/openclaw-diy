@@ -1,7 +1,7 @@
 (function () {
   var repoOwner = "LineZero-Studio";
   var repoName = "openclaw-diy";
-  var releaseTag = "v0.1.1";
+  var releaseTag = "v0.1.2";
   var rawInstallUrl = "https://raw.githubusercontent.com/" + repoOwner + "/" + repoName + "/" + releaseTag + "/install.sh";
   var rawTelegramUrl = "https://raw.githubusercontent.com/" + repoOwner + "/" + repoName + "/" + releaseTag + "/scripts/add-telegram.sh";
 

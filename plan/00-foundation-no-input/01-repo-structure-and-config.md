@@ -24,7 +24,7 @@ Create the baseline repository structure for the static site, installer scripts,
 None. Already decided:
 - GitHub repo: `LineZero-Studio/openclaw-diy`
 - First release tag: `v0.1.0`
-- Current public install tag: `v0.1.1`
+- Current public install tag: `v0.1.2`
 - Site tech: plain HTML/CSS/JS
 - README and site are manually mirrored
 - Non-informative/brand copy placeholder: `TODO: OWNER COPY`
@@ -72,7 +72,7 @@ None.
 - Use the tag-pinned install URL:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/LineZero-Studio/openclaw-diy/v0.1.1/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/LineZero-Studio/openclaw-diy/v0.1.2/install.sh | bash
 ```
 
 - Use `TODO: OWNER COPY` in brand/tagline/CTA areas where the user owns final copy.

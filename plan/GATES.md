@@ -19,15 +19,14 @@
 | Owner copy review | complete | user | `OWNER-002`, release | User approved the final public wording on 2026-05-19. |
 | Telegram BotFather token | complete | user | optional Telegram live validation | Live Bot API probe passed for `linus_linezero_bot`; first DM pairing remains a user-initiated operational step. |
 | Approval to publish `v0.1.0` | complete | user | `RELEASE-002` | User approved publication on 2026-05-19; tag was created and raw URLs verified. |
-| Fresh disposable VPS for tagged install | blocked | user | `RELEASE-002` final closure | `v0.1.1` tag, raw URLs, tag CI, and test-root validation are complete; strict final closure still needs a fresh Ubuntu 24.04 host to run the current tag-pinned install command end to end. |
+| Fresh disposable VPS for tagged install | blocked | user | `RELEASE-002` final closure | Strict final closure still needs a fresh Ubuntu 24.04 host to run the current tag-pinned install command end to end. |
 | Patch release decision for post-install command handoff | complete | user | release follow-up | User approved publishing a patch tag for the hardened post-install command handoff on 2026-05-19; `v0.1.1` was created and verified. |
-| Patch release decision for SSH-once installer handoff | blocked | user | release follow-up | Current guide and `main` installer output now use a one-SSH-session validation flow; decide whether to publish a follow-up patch tag so installer output matches. |
+| Patch release decision for SSH-once installer handoff | complete | user | release follow-up | User approved publishing a patch tag for the one-SSH-session installer handoff on 2026-05-19; `v0.1.2` publication is in progress. |
 
 ## Inputs Already Decided
 - GitHub repo: `LineZero-Studio/openclaw-diy`
 - First release tag: `v0.1.0`
-- Current public release tag: `v0.1.1`
-- Next patch tag target, if approved: `v0.1.2`
+- Current public release tag: `v0.1.2`
 - Help URL: `https://linezerostudio.com`
 - Marker path and log path confirmed
 - No-model smoke mode remains supported; live Gemini and MiniMax test keys were provided and validated.

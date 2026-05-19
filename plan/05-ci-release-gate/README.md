@@ -33,4 +33,4 @@ Blocked until later:
 
 ## Notes
 - Do not point public beginner docs at `main`.
-- `v0.1.1` is not stable until [RELEASE_CHECKLIST.md](../RELEASE_CHECKLIST.md) passes.
+- `v0.1.2` is not stable until [RELEASE_CHECKLIST.md](../RELEASE_CHECKLIST.md) passes.

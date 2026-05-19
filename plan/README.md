@@ -9,9 +9,9 @@ The v1 target is intentionally narrow: a user can create a Linode/Akamai Ubuntu 
 See [STATUS.md](./STATUS.md) for the current project state, next ticket, blockers, and open gates.
 
 Current summary:
-- Overall status: foundation implementation, live validation, model validation, reboot validation, owner copy approval, optional Telegram Bot API validation, `v0.1.0` tagging, `v0.1.1` patch tagging, raw URL verification, tag CI, test-root tag validation, post-install command hardening, and current-guide SSH-once validation ergonomics are complete.
+- Overall status: foundation implementation, live validation, model validation, reboot validation, owner copy approval, optional Telegram Bot API validation, `v0.1.0` tagging, `v0.1.1` patch tagging, raw URL verification, tag CI, test-root tag validation, post-install command hardening, and SSH-once validation ergonomics are complete. `v0.1.2` patch publication is approved and in progress.
 - Current milestone: live validation and release gates.
-- Next recommended work: continue the `v0.1.1` tag-pinned fresh VPS validation and decide whether to publish a follow-up tag for installer-output SSH-once ergonomics.
+- Next recommended work: create and verify the `v0.1.2` patch tag, then continue the tag-pinned fresh VPS validation.
 
 ## Key Decisions
 See [DECISIONS.md](./DECISIONS.md) for locked product and implementation decisions.
@@ -19,7 +19,7 @@ See [DECISIONS.md](./DECISIONS.md) for locked product and implementation decisio
 Highlights:
 - Repo: `LineZero-Studio/openclaw-diy`
 - First release tag: `v0.1.0`
-- Current public install tag: `v0.1.1`
+- Current public install tag: `v0.1.2`
 - Public install command is tag-pinned, not `main`.
 - Ubuntu 24.04 only for v1.
 - Linode/Akamai is the default VPS path; DigitalOcean is the fallback.
@@ -32,10 +32,9 @@ See [GATES.md](./GATES.md). Work that does not need user input lives under `00-f
 
 Known remaining gates:
 - Fresh disposable Ubuntu 24.04 VPS tagged install.
-- Patch release decision for the SSH-once installer handoff.
 
 ## Release Gate
-See [RELEASE_CHECKLIST.md](./RELEASE_CHECKLIST.md) and [RELEASE_PROCESS.md](./RELEASE_PROCESS.md). `v0.1.1` should not be considered stable until tag URL verification and tagged install validation pass.
+See [RELEASE_CHECKLIST.md](./RELEASE_CHECKLIST.md) and [RELEASE_PROCESS.md](./RELEASE_PROCESS.md). `v0.1.2` should not be considered stable until tag URL verification and tagged install validation pass.
 
 ## Ticket Layout
 Tickets live at:

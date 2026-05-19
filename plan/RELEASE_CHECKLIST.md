@@ -1,11 +1,11 @@
-# Release Checklist For `v0.1.1`
+# Release Checklist For `v0.1.2`
 
-Do not publish or present `v0.1.1` as stable until this checklist passes.
+Do not publish or present `v0.1.2` as stable until this checklist passes.
 
 ## Code And Docs
 - [x] Repo files exist and match agreed structure.
 - [x] `plan/RELEASE_PROCESS.md` has been reviewed for this release.
-- [x] Public install command points at `v0.1.1`.
+- [x] Public install command points at `v0.1.2`.
 - [x] Site and README use the same install command.
 - [x] Owner copy is approved and no public `TODO: OWNER COPY` placeholders remain.
 - [x] Help URL is `https://linezerostudio.com`.
@@ -54,11 +54,11 @@ Do not publish or present `v0.1.1` as stable until this checklist passes.
 - [x] Final status updated in `plan/STATUS.md`.
 - [x] Human gates updated in `plan/GATES.md`.
 - [x] Risks updated in `plan/RISKS.md`.
-- [x] User approval to publish `v0.1.1` patch tag.
-- [x] Tag `v0.1.1` created.
-- [x] Raw GitHub install URL works from the tag.
-- [x] Raw GitHub Telegram add-on URL works from the tag.
-- [x] Tag-pinned installer passes built-in test-root validation.
+- [x] User approval to publish `v0.1.2` patch tag.
+- [ ] Tag `v0.1.2` created.
+- [ ] Raw GitHub install URL works from the tag.
+- [ ] Raw GitHub Telegram add-on URL works from the tag.
+- [ ] Tag-pinned installer passes built-in test-root validation.
 - [ ] Tagged install command passes on a fresh disposable Ubuntu 24.04 VPS.
 - [x] Published tag installer output includes the hardened env-loaded post-install command handoff.
-- [ ] Published tag installer output uses the one-SSH-session validation flow, or the release owner explicitly accepts the current guide-side correction.
+- [ ] Published tag installer output uses the one-SSH-session validation flow.

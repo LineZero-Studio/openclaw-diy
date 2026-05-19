@@ -13,25 +13,25 @@ Foundation implementation, owner copy review, and release approval are complete.
 Public install command:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/LineZero-Studio/openclaw-diy/v0.1.1/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/LineZero-Studio/openclaw-diy/v0.1.2/install.sh | bash
 ```
 
 View the script first:
 
 ```text
-https://raw.githubusercontent.com/LineZero-Studio/openclaw-diy/v0.1.1/install.sh
+https://raw.githubusercontent.com/LineZero-Studio/openclaw-diy/v0.1.2/install.sh
 ```
 
 No-model smoke mode:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/LineZero-Studio/openclaw-diy/v0.1.1/install.sh | bash -s -- --skip-model
+curl -fsSL https://raw.githubusercontent.com/LineZero-Studio/openclaw-diy/v0.1.2/install.sh | bash -s -- --skip-model
 ```
 
 Optional Telegram add-on after core setup:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/LineZero-Studio/openclaw-diy/v0.1.1/scripts/add-telegram.sh | bash
+curl -fsSL https://raw.githubusercontent.com/LineZero-Studio/openclaw-diy/v0.1.2/scripts/add-telegram.sh | bash
 ```
 
 The static site reads these constants from [`site-config.js`](./site-config.js). Keep this README mirrored when release constants change.
@@ -134,7 +134,7 @@ Before running the add-on, create a Telegram bot token with `@BotFather` using `
 Run:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/LineZero-Studio/openclaw-diy/v0.1.1/scripts/add-telegram.sh | bash
+curl -fsSL https://raw.githubusercontent.com/LineZero-Studio/openclaw-diy/v0.1.2/scripts/add-telegram.sh | bash
 ```
 
 Then check status:
@@ -204,6 +204,6 @@ Open `index.html` directly in a browser. No build step or framework is required.
 
 ## Release Boundary
 
-Do not treat `v0.1.1` as stable until the live VPS install, Tailscale Serve path, reboot persistence, and at least one live model health check pass.
+Do not treat `v0.1.2` as stable until the live VPS install, Tailscale Serve path, reboot persistence, and at least one live model health check pass.
 
 For help, visit us at https://linezerostudio.com or ask a question at it@linezerostudio.com

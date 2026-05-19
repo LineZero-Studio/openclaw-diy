@@ -27,13 +27,14 @@ Document and enforce a release process where public install commands point at st
 Completed:
 - User approved publishing `v0.1.0` on 2026-05-19.
 - User approved publishing `v0.1.1` patch tag on 2026-05-19.
+- User approved publishing `v0.1.2` patch tag on 2026-05-19.
 
 Remaining:
+- `v0.1.2` tag creation and raw URL verification.
 - Fresh disposable VPS tagged install validation.
-- Release-owner decision on whether the one-SSH-session installer handoff should ship in a follow-up patch tag.
 
 ## Status Notes
-`v0.1.0` publication is approved, the tag is pushed, raw tag URLs are verified, and the tag-pinned installer passed test-root validation. User approved a `v0.1.1` patch tag to ship the hardened post-install commands that run as `openclaw` and source `/home/openclaw/.openclaw/.env`. `v0.1.1` is pushed, tag CI passed, raw tag URLs parse, and the raw tagged installer passed test-root validation. Current guide and `main` installer output now use a one-SSH-session validation flow, but this is not yet in a published tag. Final closure still requires tagged live install validation on a fresh disposable Ubuntu 24.04 host unless the release owner explicitly accepts the current validation set.
+`v0.1.0` publication is approved, the tag is pushed, raw tag URLs are verified, and the tag-pinned installer passed test-root validation. User approved a `v0.1.1` patch tag to ship the hardened post-install commands that run as `openclaw` and source `/home/openclaw/.openclaw/.env`. `v0.1.1` is pushed, tag CI passed, raw tag URLs parse, and the raw tagged installer passed test-root validation. User approved a `v0.1.2` patch tag to ship the one-SSH-session validation flow in installer output. Final closure still requires `v0.1.2` tag verification and tagged live install validation on a fresh disposable Ubuntu 24.04 host unless the release owner explicitly accepts the current validation set.
 
 ## Dependencies
 - `RELEASE-001`
@@ -49,7 +50,7 @@ None after release approval; this is the final publication control.
 - Install URL points to:
 
 ```bash
-https://raw.githubusercontent.com/LineZero-Studio/openclaw-diy/v0.1.1/install.sh
+https://raw.githubusercontent.com/LineZero-Studio/openclaw-diy/v0.1.2/install.sh
 ```
 
 - Add release checklist:
@@ -69,7 +70,7 @@ https://raw.githubusercontent.com/LineZero-Studio/openclaw-diy/v0.1.1/install.sh
 ## Acceptance Criteria
 - README/site show tag-pinned command.
 - Release checklist exists.
-- `v0.1.1` is not considered stable until the release checklist passes.
+- `v0.1.2` is not considered stable until the release checklist passes.
 
 ## Verification
 - Confirm raw GitHub URL works after tag.

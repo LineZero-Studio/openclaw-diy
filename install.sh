@@ -4,7 +4,7 @@ set -Eeuo pipefail
 PROJECT_NAME="OpenClaw VPS Guide"
 PROJECT_ID="openclaw-diy"
 REPO_SLUG="LineZero-Studio/openclaw-diy"
-RELEASE_TAG="v0.1.1"
+RELEASE_TAG="v0.1.2"
 HELP_URL="https://linezerostudio.com"
 
 DEFAULT_LOG_DIR="/var/log/openclaw-vps-guide"

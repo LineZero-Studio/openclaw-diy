@@ -9,7 +9,7 @@
 
 | Risk | Status | Impact | Likelihood | Mitigation | Linked Tickets |
 |---|---|---:|---:|---|---|
-| `v0.1.1` installer output still encourages repeated SSH wrappers during validation | mitigating | low | medium | Current guide and `main` installer output now use a one-SSH-session flow; publish a follow-up patch tag if installer output must match. | `FOUNDATION-006`, `VPS-003`, `RELEASE-002` |
+| Public installer output should match the one-SSH-session validation flow | mitigating | low | medium | `v0.1.2` patch publication is in progress to move public commands and installer output to the SSH-once flow. | `FOUNDATION-006`, `VPS-003`, `RELEASE-002` |
 
 ## Retired Risks
 | Risk | Retired On | Evidence |
