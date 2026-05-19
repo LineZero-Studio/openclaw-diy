@@ -14,7 +14,7 @@ Do not publish or present `v0.1.0` as stable until this checklist passes.
 ## CI
 - [x] `bash -n install.sh` passes.
 - [x] `bash -n scripts/add-telegram.sh` passes.
-- [ ] ShellCheck passes in GitHub CI or known warnings are documented.
+- [x] ShellCheck passes in GitHub CI.
 - [x] Static/link checks pass or intentional ignores are documented.
 
 ## Live VPS Validation
