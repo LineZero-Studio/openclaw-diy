@@ -9,9 +9,9 @@ The v1 target is intentionally narrow: a user can create a Linode/Akamai Ubuntu 
 See [STATUS.md](./STATUS.md) for the current project state, next ticket, blockers, and open gates.
 
 Current summary:
-- Overall status: foundation implementation, live validation, model validation, reboot validation, owner copy approval, and optional Telegram Bot API validation are complete.
+- Overall status: foundation implementation, live validation, model validation, reboot validation, owner copy approval, optional Telegram Bot API validation, `v0.1.0` tagging, raw URL verification, test-root tag validation, current-guide post-install command hardening, and `v0.1.1` patch approval are complete.
 - Current milestone: live validation and release gates.
-- Next recommended work: create and push the `v0.1.0` tag, verify raw tag URLs, and validate the tagged install path.
+- Next recommended work: create and verify the `v0.1.1` patch tag, then run the tag-pinned install path on a fresh disposable Ubuntu 24.04 VPS.
 
 ## Key Decisions
 See [DECISIONS.md](./DECISIONS.md) for locked product and implementation decisions.
@@ -19,6 +19,7 @@ See [DECISIONS.md](./DECISIONS.md) for locked product and implementation decisio
 Highlights:
 - Repo: `LineZero-Studio/openclaw-diy`
 - First release tag: `v0.1.0`
+- Current public install tag: `v0.1.1`
 - Public install command is tag-pinned, not `main`.
 - Ubuntu 24.04 only for v1.
 - Linode/Akamai is the default VPS path; DigitalOcean is the fallback.
@@ -29,11 +30,11 @@ Highlights:
 ## Human Input Gates
 See [GATES.md](./GATES.md). Work that does not need user input lives under `00-foundation-no-input`.
 
-Known later gates:
-- Approval to publish `v0.1.0`.
+Known remaining gates:
+- Fresh disposable Ubuntu 24.04 VPS tagged install.
 
 ## Release Gate
-See [RELEASE_CHECKLIST.md](./RELEASE_CHECKLIST.md) and [RELEASE_PROCESS.md](./RELEASE_PROCESS.md). `v0.1.0` should not be considered stable until tag URL verification and tagged install validation pass.
+See [RELEASE_CHECKLIST.md](./RELEASE_CHECKLIST.md) and [RELEASE_PROCESS.md](./RELEASE_PROCESS.md). `v0.1.1` should not be considered stable until tag URL verification and tagged install validation pass.
 
 ## Ticket Layout
 Tickets live at:

@@ -45,6 +45,8 @@
     skipModelCommand: config.skipModelCommand,
     rawTelegramUrl: config.rawTelegramUrl,
     telegramCommand: config.telegramCommand,
+    gatewayTokenCopyCommand: config.gatewayTokenCopyCommand,
+    deviceApproveCommand: config.deviceApproveCommand,
     telegramStatusCommand: config.telegramStatusCommand
   };
 

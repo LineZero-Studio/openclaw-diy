@@ -6,32 +6,32 @@ This repository contains a one-page static guide and installer scripts for start
 
 ## Current State
 
-Foundation implementation, owner copy review, and release approval are complete. The installer path now covers safety preflight, Node 24 setup, Tailscale package setup, dedicated `openclaw` user bootstrap, secret `.env` handling, provider selection, no-model smoke mode, OpenClaw installation, non-interactive onboarding, model health-check wiring, and optional Telegram add-on setup. The live install, Tailscale Serve path, dashboard URL, reboot persistence, Gemini health check, MiniMax health check, provider-key reboot validation, optional Telegram Bot API validation, raw `v0.1.0` URLs, and tag-pinned test-root installer validation have passed. Strict final release closure still needs a fresh disposable VPS tagged install.
+Foundation implementation, owner copy review, and release approval are complete. The installer path now covers safety preflight, Node 24 setup, Tailscale package setup, dedicated `openclaw` user bootstrap, secret `.env` handling, provider selection, no-model smoke mode, OpenClaw installation, non-interactive onboarding, model health-check wiring, hardened post-install command handoff, and optional Telegram add-on setup. The live install, Tailscale Serve path, dashboard URL, reboot persistence, Gemini health check, MiniMax health check, provider-key reboot validation, optional Telegram Bot API validation, raw tag URLs, and tag-pinned test-root installer validation have passed. Strict final release closure still needs a fresh disposable VPS tagged install.
 
 ## Install
 
 Public install command:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/LineZero-Studio/openclaw-diy/v0.1.0/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/LineZero-Studio/openclaw-diy/v0.1.1/install.sh | bash
 ```
 
 View the script first:
 
 ```text
-https://raw.githubusercontent.com/LineZero-Studio/openclaw-diy/v0.1.0/install.sh
+https://raw.githubusercontent.com/LineZero-Studio/openclaw-diy/v0.1.1/install.sh
 ```
 
 No-model smoke mode:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/LineZero-Studio/openclaw-diy/v0.1.0/install.sh | bash -s -- --skip-model
+curl -fsSL https://raw.githubusercontent.com/LineZero-Studio/openclaw-diy/v0.1.1/install.sh | bash -s -- --skip-model
 ```
 
 Optional Telegram add-on after core setup:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/LineZero-Studio/openclaw-diy/v0.1.0/scripts/add-telegram.sh | bash
+curl -fsSL https://raw.githubusercontent.com/LineZero-Studio/openclaw-diy/v0.1.1/scripts/add-telegram.sh | bash
 ```
 
 The static site reads these constants from [`site-config.js`](./site-config.js). Keep this README mirrored when release constants change.
@@ -95,6 +95,8 @@ The v1 access path keeps the OpenClaw gateway bound to loopback on port `18789`.
 
 Do not open public OpenClaw ports. Do not use Tailscale Funnel for v1.
 
+After install, run OpenClaw operational commands as the dedicated `openclaw` user and load the installer-managed `.env`. Running `openclaw ...` directly as `root` uses `/root/.openclaw` and can fail with `gateway token missing`.
+
 If the dashboard opens but asks for auth, copy the gateway token to your local clipboard from your local machine:
 
 ```bash
@@ -106,7 +108,7 @@ Paste it into the dashboard's `Gateway Token` field and connect. Do not share th
 If the dashboard then says `Device pairing required`, approve only the request you initiated. Copy the request ID shown by the dashboard and run:
 
 ```bash
-ssh root@<your-vps-ip> "sudo -u openclaw -H bash -lc 'openclaw devices approve <request-id>'"
+ssh root@<your-vps-ip> "sudo -u openclaw -H bash -lc 'set -a; source /home/openclaw/.openclaw/.env; set +a; openclaw devices approve <request-id>'"
 ```
 
 Then click Connect again.
@@ -126,13 +128,13 @@ Before running the add-on, create a Telegram bot token with `@BotFather` using `
 Run:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/LineZero-Studio/openclaw-diy/v0.1.0/scripts/add-telegram.sh | bash
+curl -fsSL https://raw.githubusercontent.com/LineZero-Studio/openclaw-diy/v0.1.1/scripts/add-telegram.sh | bash
 ```
 
 Then check status:
 
 ```bash
-sudo -u openclaw -H bash -lc 'openclaw channels status --channel telegram --probe --json'
+sudo -u openclaw -H bash -lc 'set -a; source /home/openclaw/.openclaw/.env; set +a; openclaw channels status --channel telegram --probe --json'
 ```
 
 Common failure notes:
@@ -162,6 +164,12 @@ Secret safety:
 - Do not paste screenshots with visible secrets.
 - Share sanitized command output only.
 
+If a post-install OpenClaw command fails with `gateway token missing`, confirm the command is not running directly as `root`. Use:
+
+```bash
+sudo -u openclaw -H bash -lc 'set -a; source /home/openclaw/.openclaw/.env; set +a; openclaw <command>'
+```
+
 ## Support Boundary
 
 This guide does not upload diagnostics and does not provide managed hosting. Use local logs and sanitized OpenClaw command output when asking for best-effort setup help.
@@ -190,6 +198,6 @@ Open `index.html` directly in a browser. No build step or framework is required.
 
 ## Release Boundary
 
-Do not treat `v0.1.0` as stable until the live VPS install, Tailscale Serve path, reboot persistence, and at least one live model health check pass.
+Do not treat `v0.1.1` as stable until the live VPS install, Tailscale Serve path, reboot persistence, and at least one live model health check pass.
 
 For help, visit us at https://linezerostudio.com or ask a question at it@linezerostudio.com

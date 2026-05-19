@@ -1,19 +1,19 @@
 # Epic: CI And Release Gate
 
 ## Goal
-Make the project safe to change and define what must be true before publishing `v0.1.0`.
+Make the project safe to change and define what must be true before publishing a stable tag.
 
 ## Gate Status
-Partially implemented, with final release still blocked.
+Partially implemented, with strict final release closure still blocked on a fresh tagged install.
 
 Completed without human input:
 - Add shell/static CI.
 - Add diagnostics and support boundaries.
 - Draft release process.
+- Validate reboot persistence.
 
 Blocked until later:
-- Live reboot persistence validation.
-- User approval to publish `v0.1.0`.
+- Fresh disposable Ubuntu 24.04 tagged install validation.
 
 ## Recommended Story Order
 1. [RELEASE-001 - Add CI For Shell And Static Checks](./01-ci-shell-and-static-checks.md)
@@ -33,4 +33,4 @@ Blocked until later:
 
 ## Notes
 - Do not point public beginner docs at `main`.
-- `v0.1.0` is not stable until [RELEASE_CHECKLIST.md](../RELEASE_CHECKLIST.md) passes.
+- `v0.1.1` is not stable until [RELEASE_CHECKLIST.md](../RELEASE_CHECKLIST.md) passes.

@@ -18,12 +18,14 @@
 | Approval for tiny model health-check request | complete | user | `MODEL-002`, `MODEL-003`, `RELEASE-003` | Gemini health checks were run and passed with `google/gemini-2.5-flash`. |
 | Owner copy review | complete | user | `OWNER-002`, release | User approved the final public wording on 2026-05-19. |
 | Telegram BotFather token | complete | user | optional Telegram live validation | Live Bot API probe passed for `linus_linezero_bot`; first DM pairing remains a user-initiated operational step. |
-| Approval to publish `v0.1.0` | complete | user | `RELEASE-002` | User approved publication on 2026-05-19; tag creation and verification are in progress. |
-| Fresh disposable VPS for tagged install | blocked | user | `RELEASE-002` final closure | `v0.1.0` tag and raw URLs are verified; strict final closure still needs a fresh Ubuntu 24.04 host to run the tag-pinned install command end to end. |
+| Approval to publish `v0.1.0` | complete | user | `RELEASE-002` | User approved publication on 2026-05-19; tag was created and raw URLs verified. |
+| Fresh disposable VPS for tagged install | blocked | user | `RELEASE-002` final closure | Strict final closure still needs a fresh Ubuntu 24.04 host to run the current tag-pinned install command end to end. |
+| Patch release decision for post-install command handoff | complete | user | release follow-up | User approved publishing a patch tag for the hardened post-install command handoff on 2026-05-19. |
 
 ## Inputs Already Decided
 - GitHub repo: `LineZero-Studio/openclaw-diy`
 - Release tag target: `v0.1.0`
+- Current patch tag target: `v0.1.1`
 - Help URL: `https://linezerostudio.com`
 - Marker path and log path confirmed
 - No-model smoke mode remains supported; live Gemini and MiniMax test keys were provided and validated.

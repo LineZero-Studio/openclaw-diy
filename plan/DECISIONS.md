@@ -10,7 +10,8 @@
 ## Repository And Release
 - GitHub repo: `LineZero-Studio/openclaw-diy`
 - First release tag: `v0.1.0`
-- Public install command is tag-pinned to `v0.1.0`, not `main`.
+- Current public install tag: `v0.1.1`
+- Public install command is tag-pinned to the current release tag, not `main`.
 - Static site is plain HTML/CSS/JS.
 - No backend for v1.
 - No build step for v1.

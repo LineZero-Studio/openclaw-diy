@@ -24,7 +24,7 @@ Document the optional Telegram setup without making it part of first-run success
 None for the documented DMs-only/default-account scope. User confirmation is required only if the final Telegram scope changes.
 
 ## Status Notes
-Completed. The site and README now document Telegram as an optional post-core add-on, include the BotFather token requirement, tag-pinned add-on command, status probe, OpenClaw Telegram docs link, and token-safe troubleshooting notes.
+Completed. The site and README now document Telegram as an optional post-core add-on, include the BotFather token requirement, tag-pinned add-on command, env-loaded status probe, OpenClaw Telegram docs link, and token-safe troubleshooting notes.
 
 ## Dependencies
 - `TELEGRAM-001`

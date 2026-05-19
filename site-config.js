@@ -1,7 +1,7 @@
 (function () {
   var repoOwner = "LineZero-Studio";
   var repoName = "openclaw-diy";
-  var releaseTag = "v0.1.0";
+  var releaseTag = "v0.1.1";
   var rawInstallUrl = "https://raw.githubusercontent.com/" + repoOwner + "/" + repoName + "/" + releaseTag + "/install.sh";
   var rawTelegramUrl = "https://raw.githubusercontent.com/" + repoOwner + "/" + repoName + "/" + releaseTag + "/scripts/add-telegram.sh";
 
@@ -18,6 +18,8 @@
     installCommand: "curl -fsSL " + rawInstallUrl + " | bash",
     skipModelCommand: "curl -fsSL " + rawInstallUrl + " | bash -s -- --skip-model",
     telegramCommand: "curl -fsSL " + rawTelegramUrl + " | bash",
-    telegramStatusCommand: "sudo -u openclaw -H bash -lc 'openclaw channels status --channel telegram --probe --json'"
+    gatewayTokenCopyCommand: "ssh root@<your-vps-ip> \"sudo -u openclaw -H bash -lc \\\"sed -n 's/^OPENCLAW_GATEWAY_TOKEN=//p' /home/openclaw/.openclaw/.env\\\"\" | pbcopy",
+    deviceApproveCommand: "ssh root@<your-vps-ip> \"sudo -u openclaw -H bash -lc 'set -a; source /home/openclaw/.openclaw/.env; set +a; openclaw devices approve <request-id>'\"",
+    telegramStatusCommand: "sudo -u openclaw -H bash -lc 'set -a; source /home/openclaw/.openclaw/.env; set +a; openclaw channels status --channel telegram --probe --json'"
   });
 }());

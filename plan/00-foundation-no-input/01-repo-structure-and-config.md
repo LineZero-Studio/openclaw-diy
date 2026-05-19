@@ -24,6 +24,7 @@ Create the baseline repository structure for the static site, installer scripts,
 None. Already decided:
 - GitHub repo: `LineZero-Studio/openclaw-diy`
 - First release tag: `v0.1.0`
+- Current public install tag: `v0.1.1`
 - Site tech: plain HTML/CSS/JS
 - README and site are manually mirrored
 - Non-informative/brand copy placeholder: `TODO: OWNER COPY`
@@ -60,7 +61,7 @@ None.
   - `scripts/add-telegram.sh`
 - Create a single repo config source, such as `site-config.js` or `config/install.json`, containing:
   - owner/repo: `LineZero-Studio/openclaw-diy`
-  - release tag: `v0.1.0`
+  - release tag: current public install tag
   - project name: `OpenClaw VPS Guide`
   - help URL: `https://linezerostudio.com`
   - install command URL
@@ -71,7 +72,7 @@ None.
 - Use the tag-pinned install URL:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/LineZero-Studio/openclaw-diy/v0.1.0/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/LineZero-Studio/openclaw-diy/v0.1.1/install.sh | bash
 ```
 
 - Use `TODO: OWNER COPY` in brand/tagline/CTA areas where the user owns final copy.
@@ -79,7 +80,7 @@ curl -fsSL https://raw.githubusercontent.com/LineZero-Studio/openclaw-diy/v0.1.0
 
 ## Acceptance Criteria
 - Repo structure exists and is navigable.
-- The public install command is tag-pinned to `v0.1.0`.
+- The public install command is tag-pinned to the current public install tag.
 - The help URL is `https://linezerostudio.com`.
 - No framework/build dependency is introduced.
 

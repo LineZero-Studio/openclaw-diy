@@ -4,7 +4,7 @@ set -Eeuo pipefail
 PROJECT_NAME="OpenClaw VPS Guide"
 PROJECT_ID="openclaw-diy"
 REPO_SLUG="LineZero-Studio/openclaw-diy"
-RELEASE_TAG="v0.1.0"
+RELEASE_TAG="v0.1.1"
 HELP_URL="https://linezerostudio.com"
 
 DEFAULT_LOG_DIR="/var/log/openclaw-vps-guide"
@@ -506,17 +506,17 @@ print_dashboard_summary() {
     info "macOS clipboard command:"
     info "ssh root@${ssh_host_hint} \"sudo -u ${OPENCLAW_USER} -H bash -lc \\\"sed -n 's/^OPENCLAW_GATEWAY_TOKEN=//p' ${OPENCLAW_ENV_PATH}\\\"\" | pbcopy"
     info "If the dashboard then says Device pairing required, approve only the request ID shown in your browser:"
-    info "ssh root@${ssh_host_hint} \"sudo -u ${OPENCLAW_USER} -H bash -lc 'openclaw devices approve <request-id>'\""
+    info "ssh root@${ssh_host_hint} \"sudo -u ${OPENCLAW_USER} -H bash -lc 'set -a; source ${OPENCLAW_ENV_PATH}; set +a; openclaw devices approve <request-id>'\""
     info "Click Connect again after approval."
     info "Do not paste the token into chat, screenshots, or support requests."
   else
     warn "Could not detect the Tailscale MagicDNS dashboard URL automatically."
     warn "Run: sudo -u ${OPENCLAW_USER} -H tailscale serve status"
     warn "If the dashboard asks for auth, copy the gateway token from ${OPENCLAW_ENV_PATH} and paste it into the Gateway Token field."
-    warn "If Device pairing required appears, approve only the request ID shown in your browser with openclaw devices approve <request-id>."
+    warn "If Device pairing required appears, approve only the request ID shown in your browser with: sudo -u ${OPENCLAW_USER} -H bash -lc 'set -a; source ${OPENCLAW_ENV_PATH}; set +a; openclaw devices approve <request-id>'"
   fi
 
-  info "Health check: sudo -u ${OPENCLAW_USER} -H bash -lc 'openclaw gateway status --json'"
+  info "Health check: sudo -u ${OPENCLAW_USER} -H bash -lc 'set -a; source ${OPENCLAW_ENV_PATH}; set +a; openclaw gateway status --json'"
 }
 
 openclaw_user_exists() {

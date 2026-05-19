@@ -72,7 +72,7 @@ ShellCheck is not installed in the local environment.
 - Include marker fields:
   - `project`: `openclaw-diy`
   - `repo`: `LineZero-Studio/openclaw-diy`
-  - `installerVersion`: `v0.1.0`
+  - `installerVersion`: current release tag (`v0.1.1` for the patch release)
   - `createdAt`
   - `lastStep`
   - `state`: `in-progress|complete`

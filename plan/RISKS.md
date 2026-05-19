@@ -10,6 +10,7 @@
 | Risk | Status | Impact | Likelihood | Mitigation | Linked Tickets |
 |---|---|---:|---:|---|---|
 | `curl | bash` trust concern may reduce confidence | open | medium | medium | Show "view script first" link next to install command; tag-pin release. | `FOUNDATION-006`, `RELEASE-002` |
+| Published `v0.1.0` installer handoff text may lead users to run post-install OpenClaw commands without the env-loaded `openclaw` user wrapper | mitigating | medium | medium | `v0.1.1` patch publication is in progress; public commands now target the patch tag with the hardened handoff. | `FOUNDATION-006`, `VPS-003`, `TELEGRAM-002`, `RELEASE-002` |
 
 ## Retired Risks
 | Risk | Retired On | Evidence |
