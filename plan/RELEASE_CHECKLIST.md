@@ -55,10 +55,10 @@ Do not publish or present `v0.1.2` as stable until this checklist passes.
 - [x] Human gates updated in `plan/GATES.md`.
 - [x] Risks updated in `plan/RISKS.md`.
 - [x] User approval to publish `v0.1.2` patch tag.
-- [ ] Tag `v0.1.2` created.
-- [ ] Raw GitHub install URL works from the tag.
-- [ ] Raw GitHub Telegram add-on URL works from the tag.
-- [ ] Tag-pinned installer passes built-in test-root validation.
+- [x] Tag `v0.1.2` created.
+- [x] Raw GitHub install URL works from the tag.
+- [x] Raw GitHub Telegram add-on URL works from the tag.
+- [x] Tag-pinned installer passes built-in test-root validation.
 - [ ] Tagged install command passes on a fresh disposable Ubuntu 24.04 VPS.
 - [x] Published tag installer output includes the hardened env-loaded post-install command handoff.
-- [ ] Published tag installer output uses the one-SSH-session validation flow.
+- [x] Published tag installer output uses the one-SSH-session validation flow.
