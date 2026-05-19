@@ -38,6 +38,7 @@ Completed. `index.html`, `styles.css`, `script.js`, `site-config.js`, and `READM
 - owner-owned brand copy slots, later resolved and approved in `OWNER-002`
 - post-install OpenClaw commands hardened to run as `openclaw` and source `/home/openclaw/.openclaw/.env`, avoiding root config/token mismatch errors
 - one-SSH-session validation flow so follow-up commands run directly on the VPS instead of nesting repeated `ssh root@...` wrappers
+- GitHub Pages live guide at `https://linezero-studio.github.io/openclaw-diy/`
 
 Verification completed:
 - `bash -n install.sh`
@@ -47,6 +48,7 @@ Verification completed:
 - static consistency check for install commands, linked local assets, help URL, release tag, and owner-copy state
 - static consistency check for env-loaded post-install OpenClaw command wrappers
 - static consistency check for one-SSH-session guide flow
+- GitHub Pages enabled from `main` root and returned `HTTP/1.1 200 OK`
 - searched final site/README for required setup terms
 - reviewed CSS color tokens for one-note palette and prohibited decorative background patterns
 

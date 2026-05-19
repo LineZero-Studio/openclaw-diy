@@ -12,6 +12,7 @@ Current summary:
 - Overall status: foundation implementation, live validation, model validation, reboot validation, owner copy approval, optional Telegram Bot API validation, `v0.1.0` tagging, `v0.1.1` patch tagging, `v0.1.2` patch tagging, raw URL verification, tag CI, test-root tag validation, post-install command hardening, SSH-once validation ergonomics, and fresh disposable VPS tagged install validation are complete.
 - Current milestone: `v0.1.2` release validation complete.
 - Next recommended work: no planned release tickets remain.
+- Live guide: `https://linezero-studio.github.io/openclaw-diy/`
 
 ## Key Decisions
 See [DECISIONS.md](./DECISIONS.md) for locked product and implementation decisions.

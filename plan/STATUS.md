@@ -1,7 +1,7 @@
 # Project Status
 
 ## Overall Status
-Foundation implementation, no-input documentation work, owner copy approval, live VPS validation, Tailscale Serve, dashboard URL validation, dashboard Gateway Token and device pairing guidance, reboot persistence, Gemini health-check validation, MiniMax health-check validation, provider-key reboot validation, optional Telegram Bot API validation, `v0.1.0` publication, `v0.1.1` patch publication, and `v0.1.2` patch publication are complete. The current public tag is `v0.1.2`; raw tag URLs parse, tag CI passed, the raw tagged installer passed test-root validation, the tagged installer output uses the one-SSH-session validation handoff, and the fresh disposable Ubuntu 24.04 tagged install passed user-reported gateway/model/reboot validation. `FOUNDATION-001` through `FOUNDATION-006`, `OWNER-001`, `OWNER-002`, `TELEGRAM-001`, `TELEGRAM-002`, `RELEASE-001`, `RELEASE-002`, `RELEASE-003`, `RELEASE-004`, `VPS-001`, `VPS-002`, `VPS-003`, `MODEL-001`, `MODEL-002`, and `MODEL-003` are complete.
+Foundation implementation, no-input documentation work, owner copy approval, live VPS validation, Tailscale Serve, dashboard URL validation, dashboard Gateway Token and device pairing guidance, reboot persistence, Gemini health-check validation, MiniMax health-check validation, provider-key reboot validation, optional Telegram Bot API validation, `v0.1.0` publication, `v0.1.1` patch publication, and `v0.1.2` patch publication are complete. The current public tag is `v0.1.2`; raw tag URLs parse, tag CI passed, the raw tagged installer passed test-root validation, the tagged installer output uses the one-SSH-session validation handoff, the fresh disposable Ubuntu 24.04 tagged install passed user-reported gateway/model/reboot validation, and GitHub Pages serves the live guide at `https://linezero-studio.github.io/openclaw-diy/`. `FOUNDATION-001` through `FOUNDATION-006`, `OWNER-001`, `OWNER-002`, `TELEGRAM-001`, `TELEGRAM-002`, `RELEASE-001`, `RELEASE-002`, `RELEASE-003`, `RELEASE-004`, `VPS-001`, `VPS-002`, `VPS-003`, `MODEL-001`, `MODEL-002`, and `MODEL-003` are complete.
 
 ## Current Milestone
 `v0.1.2` release validation complete.
@@ -11,6 +11,9 @@ No remaining planned release tickets.
 
 Next recommended work:
 Optional operational follow-up only: rotate any secrets pasted into chat or screenshots, and keep future changes on a new patch tag.
+
+Live guide:
+https://linezero-studio.github.io/openclaw-diy/
 
 ## Completed
 - [FOUNDATION-001 - Create Repo Structure And Shared Config](./00-foundation-no-input/01-repo-structure-and-config.md)

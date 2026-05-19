@@ -6,7 +6,13 @@ This repository contains a one-page static guide and installer scripts for start
 
 ## Current State
 
-Foundation implementation, owner copy review, and release approval are complete. The installer path now covers safety preflight, Node 24 setup, Tailscale package setup, dedicated `openclaw` user bootstrap, secret `.env` handling, provider selection, no-model smoke mode, OpenClaw installation, non-interactive onboarding, model health-check wiring, hardened post-install command handoff, and optional Telegram add-on setup. The live install, Tailscale Serve path, dashboard URL, reboot persistence, Gemini health check, MiniMax health check, provider-key reboot validation, optional Telegram Bot API validation, raw tag URLs, and tag-pinned test-root installer validation have passed. Strict final release closure still needs a fresh disposable VPS tagged install.
+Foundation implementation, owner copy review, and release validation are complete. The installer path now covers safety preflight, Node 24 setup, Tailscale package setup, dedicated `openclaw` user bootstrap, secret `.env` handling, provider selection, no-model smoke mode, OpenClaw installation, non-interactive onboarding, model health-check wiring, hardened post-install command handoff, and optional Telegram add-on setup. The live install, Tailscale Serve path, dashboard URL, reboot persistence, Gemini health check, MiniMax health check, provider-key reboot validation, optional Telegram Bot API validation, raw tag URLs, tag-pinned test-root installer validation, and fresh disposable VPS tagged install validation have passed.
+
+Live page:
+
+```text
+https://linezero-studio.github.io/openclaw-diy/
+```
 
 ## Install
 
