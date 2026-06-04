@@ -9,6 +9,7 @@
     <script src="script.js" defer></script>
   </head>
   <body>
+    <a class="skip-link" href="#install">Skip to install command</a>
     <header class="site-header">
       <a class="site-title" href="#top" data-config="projectName">OpenClaw VPS Guide</a>
       <nav class="site-nav" aria-label="Primary">
@@ -28,11 +29,19 @@
           <h1 id="page-title" data-config="projectName">OpenClaw VPS Guide</h1>
           <p class="lede">Set up a private sandbox in 15 minutes</p>
           <p class="outcome">First successful outcome: OpenClaw is installed under a dedicated Linux user, the gateway stays on loopback, and the dashboard opens privately through Tailscale Serve.</p>
+          <ul class="quick-facts" aria-label="Setup essentials">
+            <li><span>OS</span>Ubuntu 24.04</li>
+            <li><span>Access</span>Tailscale Serve</li>
+            <li><span>Ports</span>No public OpenClaw ports</li>
+          </ul>
         </div>
 
         <div class="command-panel" id="install" aria-label="Install command">
           <div class="panel-heading">
-            <p class="step-label">Tagged install command</p>
+            <div>
+              <p class="step-label">Tagged install command</p>
+              <p class="panel-subtext">Run from an SSH session on a fresh Ubuntu 24.04 VPS.</p>
+            </div>
             <a data-config-href="rawInstallUrl" href="https://raw.githubusercontent.com/LineZero-Studio/openclaw-diy/v0.1.2/install.sh">View script first</a>
           </div>
           <div class="command-snippet">
@@ -46,6 +55,16 @@
                 <path d="m20 6-11 11-5-5"></path>
               </svg>
             </button>
+          </div>
+          <ul class="command-context">
+            <li><strong>Before running:</strong> review the pinned script and confirm the VPS has no unrelated data.</li>
+            <li><strong>Success means:</strong> OpenClaw runs as the <code>openclaw</code> user and prints the private dashboard path.</li>
+            <li><strong>Do not share:</strong> API keys, bot tokens, gateway tokens, <code>.env</code>, or screenshots with secrets.</li>
+          </ul>
+          <div class="safety-strip" aria-label="Install safeguards">
+            <span>Pinned to <strong data-config="releaseTag">v0.1.2</strong></span>
+            <span>Loopback gateway</span>
+            <span>Private tailnet access</span>
           </div>
           <p class="note">The public command is pinned to <span data-config="releaseTag">v0.1.2</span>. Do not run install docs from <code>main</code> for a beginner setup.</p>
         </div>
@@ -69,9 +88,41 @@
         </div>
       </section>
 
+      <section class="path-band" aria-labelledby="path-title">
+        <div class="section-heading compact-heading">
+          <p class="eyebrow">Guided setup path</p>
+          <h2 id="path-title">Follow The Required Path First</h2>
+        </div>
+        <div class="path-grid" aria-label="Required setup path">
+          <a href="#requirements">
+            <span class="path-number">1</span>
+            <strong>Check requirements</strong>
+            <span>Confirm VPS, Tailscale, and model readiness before install.</span>
+          </a>
+          <a href="#vps">
+            <span class="path-number">2</span>
+            <strong>Create the VPS</strong>
+            <span>Use a fresh Ubuntu 24.04 instance with no unrelated data.</span>
+          </a>
+          <a href="#install">
+            <span class="path-number">3</span>
+            <strong>Run the installer</strong>
+            <span>Use the pinned release command and keep the script review link nearby.</span>
+          </a>
+          <a href="#access">
+            <span class="path-number">4</span>
+            <strong>Open privately</strong>
+            <span>Complete Tailscale Serve and avoid public OpenClaw ports.</span>
+          </a>
+        </div>
+      </section>
+
       <section class="content-band" id="requirements" aria-labelledby="requirements-title">
         <div class="section-heading">
-          <p class="eyebrow">Before you start</p>
+          <div class="heading-meta">
+            <p class="eyebrow">Before you start</p>
+            <span class="section-badge badge-required">Required</span>
+          </div>
           <h2 id="requirements-title">Requirements</h2>
         </div>
         <div class="check-grid">
@@ -92,7 +143,10 @@
 
       <section class="content-band alt" id="vps" aria-labelledby="vps-title">
         <div class="section-heading">
-          <p class="eyebrow">VPS checklist</p>
+          <div class="heading-meta">
+            <p class="eyebrow">VPS checklist</p>
+            <span class="section-badge badge-required">Required</span>
+          </div>
           <h2 id="vps-title">Linode/Akamai Default Path</h2>
         </div>
         <div class="two-column">
@@ -112,7 +166,10 @@
 
       <section class="content-band" id="costs" aria-labelledby="costs-title">
         <div class="section-heading">
-          <p class="eyebrow">Cost checkpoints</p>
+          <div class="heading-meta">
+            <p class="eyebrow">Cost checkpoints</p>
+            <span class="section-badge badge-required">Required</span>
+          </div>
           <h2 id="costs-title">Review Charges Before Creating Resources</h2>
         </div>
         <div class="check-grid">
@@ -133,7 +190,10 @@
 
       <section class="content-band alt" id="models" aria-labelledby="models-title">
         <div class="section-heading">
-          <p class="eyebrow">Model setup</p>
+          <div class="heading-meta">
+            <p class="eyebrow">Model setup</p>
+            <span class="section-badge badge-required">Required</span>
+          </div>
           <h2 id="models-title">MiniMax, Gemini, Or Smoke Mode</h2>
         </div>
         <div class="two-column">
@@ -163,7 +223,10 @@
 
       <section class="content-band" id="access" aria-labelledby="access-title">
         <div class="section-heading">
-          <p class="eyebrow">Private dashboard</p>
+          <div class="heading-meta">
+            <p class="eyebrow">Private dashboard</p>
+            <span class="section-badge badge-required">Required</span>
+          </div>
           <h2 id="access-title">Tailscale Serve Only</h2>
         </div>
         <div class="two-column">
@@ -223,7 +286,10 @@
 
       <section class="content-band alt" id="telegram" aria-labelledby="telegram-title">
         <div class="section-heading">
-          <p class="eyebrow">Optional add-on</p>
+          <div class="heading-meta">
+            <p class="eyebrow">Optional add-on</p>
+            <span class="section-badge badge-optional">Optional</span>
+          </div>
           <h2 id="telegram-title">Telegram After Core Setup</h2>
         </div>
         <div class="two-column">
@@ -270,7 +336,10 @@
 
       <section class="content-band" id="troubleshooting" aria-labelledby="troubleshooting-title">
         <div class="section-heading">
-          <p class="eyebrow">Recovery</p>
+          <div class="heading-meta">
+            <p class="eyebrow">Recovery</p>
+            <span class="section-badge badge-recovery">Recovery</span>
+          </div>
           <h2 id="troubleshooting-title">Troubleshooting And Rebuild Rules</h2>
         </div>
         <div class="check-grid">
@@ -291,7 +360,10 @@
 
       <section class="content-band alt" id="support" aria-labelledby="support-title">
         <div class="section-heading">
-          <p class="eyebrow">Support boundary</p>
+          <div class="heading-meta">
+            <p class="eyebrow">Support boundary</p>
+            <span class="section-badge badge-recovery">Recovery</span>
+          </div>
           <h2 id="support-title">Local Diagnostics Only</h2>
         </div>
         <div class="status-panel">
@@ -303,7 +375,10 @@
 
       <section class="content-band" id="release" aria-labelledby="release-title">
         <div class="section-heading">
-          <p class="eyebrow">Release gate</p>
+          <div class="heading-meta">
+            <p class="eyebrow">Release gate</p>
+            <span class="section-badge badge-review">Review</span>
+          </div>
           <h2 id="release-title">Pre-Release Validation Boundary</h2>
         </div>
         <div class="status-panel">
@@ -317,5 +392,10 @@
       <span> &copy;<script>document.write(new Date().getFullYear())</script> LineZero Studio</span>
       <a data-config-href="helpUrl" href="https://linezerostudio.com">Run into issues?</a>
     </footer>
+    <div class="mobile-action-bar" aria-label="Install actions">
+      <button class="mobile-copy-button" type="button" data-copy-command data-copy-key="installCommand">Copy install</button>
+      <a data-config-href="rawInstallUrl" href="https://raw.githubusercontent.com/LineZero-Studio/openclaw-diy/v0.1.2/install.sh">View script</a>
+    </div>
+    <div class="copy-toast" role="status" aria-live="polite" aria-atomic="true"></div>
   </body>
 </html>
