@@ -54,47 +54,19 @@
   setText("[data-config]", values);
   setLinks("[data-config-href]", values);
 
-  var copyToast = document.querySelector(".copy-toast");
-  var copyToastTimer;
-
-  function showCopyToast(message) {
-    if (!copyToast) {
-      return;
-    }
-
-    window.clearTimeout(copyToastTimer);
-    copyToast.textContent = message;
-    copyToast.classList.add("is-visible");
-
-    copyToastTimer = window.setTimeout(function () {
-      copyToast.classList.remove("is-visible");
-    }, 1800);
-  }
-
   document.querySelectorAll("[data-copy-command]").forEach(function (button) {
     var originalLabel = button.getAttribute("aria-label") || "Copy command";
     var originalTitle = button.getAttribute("title") || originalLabel;
-    var originalText = button.textContent;
-    var hasInlineIcon = Boolean(button.querySelector("svg"));
 
     function markCopied() {
       button.classList.add("is-copied");
       button.setAttribute("aria-label", "Copied");
       button.setAttribute("title", "Copied");
-      showCopyToast("Command copied");
-
-      if (!hasInlineIcon) {
-        button.textContent = "Copied";
-      }
 
       window.setTimeout(function () {
         button.classList.remove("is-copied");
         button.setAttribute("aria-label", originalLabel);
         button.setAttribute("title", originalTitle);
-
-        if (!hasInlineIcon) {
-          button.textContent = originalText;
-        }
       }, 1800);
     }
 
