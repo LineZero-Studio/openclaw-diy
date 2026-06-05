@@ -1,4 +1,4 @@
-# OpenClaw VPS Guide
+# OpenClaw VPS Launcher
 
 What's the quickest way to get a private OpenClaw server running? This repo is our answer to that question.
 

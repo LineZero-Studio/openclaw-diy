@@ -413,6 +413,64 @@ pre code {
   border-left: 6px solid var(--blue);
 }
 
+.access-model,
+.warning-panel,
+.success-panel,
+.access-path-card,
+.prompt-note {
+  padding: 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.access-model {
+  background: #eef5f2;
+  border-color: #cce0d8;
+  border-left: 6px solid var(--accent);
+}
+
+.warning-panel {
+  background: var(--surface-warm);
+  border-color: #eadcc4;
+  border-left: 6px solid var(--amber);
+}
+
+.success-panel {
+  background: #eef4f8;
+  border-color: #cbdce9;
+  border-left: 6px solid var(--blue);
+}
+
+.prompt-note strong {
+  color: var(--text);
+}
+
+.access-support,
+.access-path-card {
+  display: grid;
+  gap: 1rem;
+  align-self: start;
+}
+
+.access-path-card {
+  background: var(--surface-warm);
+  border-color: #eadcc4;
+}
+
+.access-path-card .step-list {
+  padding: 0 0 0 1.35rem;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+}
+
+.access-path-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
 .site-footer {
   display: flex;
   align-items: center;
